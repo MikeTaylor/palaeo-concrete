@@ -8,6 +8,8 @@ Department of Earth Sciences, University of Bristol, Bristol BS8 1RJ, UK.
 **Steven D. Sroka**
 Utah Field House of Natural History State Park Museum, 496 E. Main Street, Vernal, UT 84078.
 
+Feel free to read [the in-progress manuscript](concrete-Diplodocus-of-Vernal.docx).
+
 Anyone is welcome to [file issues](https://github.com/MikeTaylor/palaeo-concrete/issues).
 
 ## Copyright and License
