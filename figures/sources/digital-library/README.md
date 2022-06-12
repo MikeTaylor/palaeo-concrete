@@ -13,6 +13,7 @@
 * https://collections.lib.utah.edu/details?id=409712&q=dippy (skull and neck)
 * https://collections.lib.utah.edu/details?id=1086939&page=2&q=diplodocus
 * https://collections.lib.utah.edu/details?id=1086940&page=2&q=diplodocus (Ernest and Billie Untermann)
+* https://collections.lib.utah.edu/details?id=1086943&q=Utah+Field+House+of+Natural+History&rows=100
 
 ## 3. Assembling the mount
 
