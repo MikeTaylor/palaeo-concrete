@@ -1,0 +1,250 @@
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:a1c:7215:0:0:0:0:0 with SMTP id n21csp2665085wmc;
+        Mon, 20 Jun 2022 10:54:16 -0700 (PDT)
+X-Google-Smtp-Source: AGRyM1vGfDRO49KHR/DyG5rPraXwhP2+ZLDyPy3uLmRVg4hzTHJWegKR8LkosdA3baAFcnh2um4b
+X-Received: by 2002:a17:906:51d5:b0:711:f4c7:5085 with SMTP id v21-20020a17090651d500b00711f4c75085mr22668727ejk.650.1655747656216;
+        Mon, 20 Jun 2022 10:54:16 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1655747656; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=uOySz7h3bua/s3iFPjqFJi47vReqgt47l8LRumAnwMzsU9etrM2QStOq0KjvG+RQmD
+         WMHXwPykpjNC3oZyKgNOpY3I5PkKo1J2uDI61lZ+R4HLua/me9//SWu2BLBfjYmJLWEP
+         pB7f9/ovIYYsbBm2WeUWpHsmj68ncUD6LGNh7jO0s5or4lqqrl4DtynZypQ2CAXraGUi
+         Czpm/r8pV7uu3Nbsju+KL70V+acPcoHTDN4drG6LKXyxbiAG2KxEtrZc4d3PxZlgCx0d
+         +S/iFZ3cu8fQ1M3uYOzGuHAzKKQcoPSPDzd50piHtgEaTnOPrSi9Pht/VYLlqqxo4/7R
+         JKXw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:suggested_attachment_session_id:content-language
+         :accept-language:in-reply-to:references:message-id:date:thread-index
+         :thread-topic:subject:to:from:dkim-signature;
+        bh=tWVc8UeyxFApsOarlZtqEFw8DQWy7k0sE7MFgtODj3I=;
+        b=daU4xSqAbmymAb9XW/tnKjgDtR1xfjSC2+Ft/IUlFUS+sHFRPhK1BLCCbstmlW4dWw
+         n8r/QxB7QKmMJiZKz9depHjvIwtShDkPAXxMIRoGMdQZEGAKzqa8VtPB2MaQSBgoKxC/
+         KdFAoUtNtvqtfUFXniHaRc8dSoHP/XSrSoPViOQ6hjjTFoM9l3uVEtYxwv+oom6HT7SN
+         CugOU1Rr3xeM3NYHPWAUJ26oCiGaRTZ7ojlMbcp0IcKSQ1YQ2FeO/+hDuPVsdVMMn+IQ
+         THlZh//t336KBp/QhJPl2jy8V3hTRYRJiG32FAZBD0LJ6enpvIsuk8WVPwWnmNZ82Jh+
+         rQ4Q==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@rockymountnc.onmicrosoft.com header.s=selector2-rockymountnc-onmicrosoft-com header.b=kNb7IcKT;
+       arc=pass (i=1 spf=pass spfdomain=rockymountnc.gov dkim=pass dkdomain=rockymountnc.gov dmarc=pass fromdomain=rockymountnc.gov);
+       spf=pass (google.com: domain of leigh.white@rockymountnc.gov designates 40.107.89.79 as permitted sender) smtp.mailfrom=Leigh.White@rockymountnc.gov;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rockymountnc.gov
+Return-Path: <Leigh.White@rockymountnc.gov>
+Received: from GCC02-BL0-obe.outbound.protection.outlook.com (mail-bl0gcc02on2079.outbound.protection.outlook.com. [40.107.89.79])
+        by mx.google.com with ESMTPS id p18-20020a17090664d200b006fece7848fcsi7536605ejn.252.2022.06.20.10.54.15
+        for <sauropoda@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 20 Jun 2022 10:54:16 -0700 (PDT)
+Received-SPF: pass (google.com: domain of leigh.white@rockymountnc.gov designates 40.107.89.79 as permitted sender) client-ip=40.107.89.79;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@rockymountnc.onmicrosoft.com header.s=selector2-rockymountnc-onmicrosoft-com header.b=kNb7IcKT;
+       arc=pass (i=1 spf=pass spfdomain=rockymountnc.gov dkim=pass dkdomain=rockymountnc.gov dmarc=pass fromdomain=rockymountnc.gov);
+       spf=pass (google.com: domain of leigh.white@rockymountnc.gov designates 40.107.89.79 as permitted sender) smtp.mailfrom=Leigh.White@rockymountnc.gov;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rockymountnc.gov
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=NR8Psth0JSk7UzBs5ABiKUuRXXy7X1KoEQrdfhk9QQTuw2JV9xS+F2grDlZ4ftsLVyABhM1BH+hZ0bI+Ye/TdlwnWYv8/esRjZE4qKY81LLUhBhf7e/oXkhLJPgqBMM5Ji0c5rvXWZrTqbO1cZ3FLJ2TW3DvJd025ENTylooRvnx3baBvP3eowsEi2ufYkzKso2goDlWMiZ97Jbkkb5YeOOqYfiz7oELXzmhQpMnudGm/e8tIKevGrHgc1rKCP0lpaNcky1WY0hHqLbZIDwDCWwW/dS9FurpviC41CLwAS50jcM1SkCyL3UQlKClOjs5VDTF6z+CCI6abp5pRpSwOw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=tWVc8UeyxFApsOarlZtqEFw8DQWy7k0sE7MFgtODj3I=;
+ b=RyZH2dandehkwKQ1nwp5wzqRMmGw52J0xTzm5Iil5uO5qUhxmBQNNrgMk52tvHhaURMQtDPhtGrkyrNE2bAyHvODCCD7gFk6P6sUxcJugR0mf+ZSXl+iVrpP/Uq6esUeeOzbX+xLWNYtodOTaFV3cVGQc/zVFht3YzzLoPIQQo8s2eOMNptDFlCYTNPGkLCuQgJMbSkwDKJsCqQZmuxrMT2G0YiCCecGaeCMwniEy6Xb5eDE+FlVhFWL8/272qLFs1sAbCbgx+GoePV++d/4TtFwRzW5R0jXHmtQpFpgT/u0QcFAmqGcinT5rvGEteS0C1/BZB6eP6wITcuPyR3qog==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=rockymountnc.gov; dmarc=pass action=none
+ header.from=rockymountnc.gov; dkim=pass header.d=rockymountnc.gov; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=rockymountnc.onmicrosoft.com; s=selector2-rockymountnc-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=tWVc8UeyxFApsOarlZtqEFw8DQWy7k0sE7MFgtODj3I=;
+ b=kNb7IcKTdqzlBMNYm7U2ZjfXkNS69qgAdbXbYiQeCxPti06t4T6kVfTAlnYmVFpjaFHzowBYewsqZJ3er9YJrW38hy9ZRmDJhWBHF/FtpOGHykJTsoS+ysdwtXsSQ5XDaOYC6+2GS7u/1BfZLMWmpsG0Lfbxpa59cRZwFgvsz8U=
+Received: from BLAPR09MB7332.namprd09.prod.outlook.com (2603:10b6:208:2a9::11)
+ by CO6PR09MB8405.namprd09.prod.outlook.com (2603:10b6:303:cc::20) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5353.15; Mon, 20 Jun
+ 2022 17:54:12 +0000
+Received: from BLAPR09MB7332.namprd09.prod.outlook.com
+ ([fe80::4040:5983:f85a:3846]) by BLAPR09MB7332.namprd09.prod.outlook.com
+ ([fe80::4040:5983:f85a:3846%8]) with mapi id 15.20.5353.022; Mon, 20 Jun 2022
+ 17:54:11 +0000
+From: Leigh White <Leigh.White@rockymountnc.gov>
+To: Mike Taylor <sauropoda@gmail.com>
+Subject: Re: Diplodocus cast in Sunset Park (1960)
+Thread-Topic: Diplodocus cast in Sunset Park (1960)
+Thread-Index: AQHYfSxM8oF493vQW0m+WG5jRCE2f61QcYgAgAAY7oWAAAByzIAAFqGAgAf5MDI=
+Date: Mon, 20 Jun 2022 17:54:11 +0000
+Message-ID:
+ <BLAPR09MB73328D37D21ABC546A61263880B09@BLAPR09MB7332.namprd09.prod.outlook.com>
+References:
+ <CACnMvBYKQ88R4nLdnmDSUDZOHKvUhkJqXVGLUASZFHJT0Oo-Eg@mail.gmail.com>
+ <CACnMvBatAFgnT_03cN6DSJsqu5GS46ubBktzvFyFg4=iqOKXDw@mail.gmail.com>
+ <BLAPR09MB715656E4AD8F5EE6ECE92E93E6AD9@BLAPR09MB7156.namprd09.prod.outlook.com>
+ <BLAPR09MB7332CDE7EC7CFD1F8EC1F70280AD9@BLAPR09MB7332.namprd09.prod.outlook.com>
+ <CACnMvBYYspNVa8kNtxp9PdO34jQ=Q11=iiPVYm2jM81D9F2EbQ@mail.gmail.com>
+In-Reply-To:
+ <CACnMvBYYspNVa8kNtxp9PdO34jQ=Q11=iiPVYm2jM81D9F2EbQ@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+suggested_attachment_session_id: c0dd1fd5-5960-93b1-e4a8-1c9bcbabf4c1
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=rockymountnc.gov;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 84fe7fd9-e2f4-4a4c-0f7d-08da52e5e1ef
+x-ms-traffictypediagnostic: CO6PR09MB8405:EE_
+x-microsoft-antispam-prvs:
+ <CO6PR09MB84057D764EA590AAC7669B4B80B09@CO6PR09MB8405.namprd09.prod.outlook.com>
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ 3ODsoj2F9ztGbZnZr613wJbtlZtfYjCrIHFD2jbAokcGkP9W5oqDLnctjnSO3YmUXkg3uqK2/UjOJtVDWpcYQjco9xSQXKPhIKvGViZsYKYyKHgIdcuvi1qWuZwaa3H5zo+sEOb8mGHK7aHW9VIfL03P37KQgbCHqkodaZuDHG1Rkkr7NGMPEEcb2solelt6Cy1ryZOfJo1t0CfBlNCxUN5YDXDFl7I7Ki1l8/lNtTbQYjkNZyjmvonWA7pL74y67CVJdKfTT1T6HNFhAFu+C6zsBEqyMLgCGVSFytLtkg0s0nxzGsLAnSbFqpVbEFxwoDQRtDyRNV4jR7P3HzTetg/42SGR8MKlV0osDgizKc0F2rU3nglaU1+rZyA5Faww/iGbDoc0YW7b0hwnzasVRCZuH+HJ4ItCmCXuU/JplQmSHT/ljwQleG6W7+xXeCdUUdZGLmwBYFstnieQMHrqSRAuQM0SGGkWAg1QyOqqSYx/4WOGgCOXoX101LRWpUnCUxe1Qzpsmon4tNjkXQrrJB995HQt3Y7JR65+EZ/sWx3sckmwcgavvTHZmw4Z8RDmrFzCikBUVUFI2guRsR3MmQDh7ajBG3LRAT7DUqO6Yjc+pllnQDy7ydn2CLp8rBELEyfrL+m35UEZ9Ent5I1oo4vRDefKxJZfIApY25fNQkv8VTBY6CYaZPcghXTUkPsn9LSUS500TO4+O98Kq6VDHA==
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BLAPR09MB7332.namprd09.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(366004)(99936003)(186003)(83380400001)(55016003)(86362001)(122000001)(38100700002)(6506007)(7696005)(9686003)(53546011)(6916009)(26005)(71200400001)(498600001)(2906002)(64756008)(66446008)(76116006)(66556008)(33656002)(8676002)(66476007)(38070700005)(5660300002)(52536014)(19627405001)(8936002)(66946007);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?Windows-1252?Q?Y7LR0V7mz3NjDZerWDtD10B/+dNaHzz8xOhp5TcZ6t3FVJxaCE8+h37t?=
+ =?Windows-1252?Q?/b11YyqakjPNKuUHwKxuOfmzAHFZj2wcsga5pnz/cYzFbmJaeO4sz/3Q?=
+ =?Windows-1252?Q?Q7L6NMScl0rDMd7FFzZbAna9PBc1H9zL7nvlXjeQz4yQRbl3T0YmZVcq?=
+ =?Windows-1252?Q?lAwTLl/JvkVk0IBzyBRP6fznDJrXRdjtdYN+JnZXkGeyYFwe3ClHMrtQ?=
+ =?Windows-1252?Q?rJxbwC7c1dzxEeaHxYynyaAln2af02JkPg3y45O7zgbMsnB4myFYhN2o?=
+ =?Windows-1252?Q?igKvOXNppbc1M1OLMPE/BgA17ocisy+XYcLun6nOgxzE3kPGEjkUaiOz?=
+ =?Windows-1252?Q?75IuHFSTI66/P3MhTG6NrgfWdUcznB514zlzACC6j6muGRCtIvy4x3Am?=
+ =?Windows-1252?Q?9KM9ChUbt04DxAwNIzTfEYq1SJcDJdwjZ60SpFHgHwMwolkJlL55f/e+?=
+ =?Windows-1252?Q?fAQvHiHPMEq/GvgSxg8tInHYxbUcTuTEM3JoGYNPIW6Uv0bwaFmD1QEK?=
+ =?Windows-1252?Q?9T5z5qyI3j0KtqSdojP0PfQZmHypO/CTakciyk8qNY6nSEcosVQrB2NA?=
+ =?Windows-1252?Q?fnDwru6jrQmnRFNzJfqeV8n/FBLvZsBA5fOWSBDAF4WltYCxOrS7tJGP?=
+ =?Windows-1252?Q?+PhguYpo6HC7KY9mjQbp1TzvOGIP5mqvIqB4kV0NfuAaMzXuzWNWRi5Y?=
+ =?Windows-1252?Q?dcwFW0XO/o40eoYf7gbzA6UxlQNJ/09Btcx5JBC+xH2nJWy9roJcotcs?=
+ =?Windows-1252?Q?KMOJAhhSeaYC5lznFL6QF/SU3+/8O4RBtu0OhJ2WcKFZzWaVrVsssapf?=
+ =?Windows-1252?Q?L6FIDgM1ZA50S9cRWTUQJZgPARU6MG1nqC3Fn1FhyaXov/dqv6ve7Kqm?=
+ =?Windows-1252?Q?ozYCsYhBozVIGwPEqY1f0xk5NxFtH25Znfd9J610eCgMD3pqmF6zdiG1?=
+ =?Windows-1252?Q?s6HhSQfnn7d8LOZS1U/zk6CdiucQwMiS4xrEBDw1CLhtTiJnoOyJqiLO?=
+ =?Windows-1252?Q?6Ugy0lj7lA1/jJIRFl9QsZ4S7gL3o9qZGHzmFLGtcwQrNHU7oP1lIsu5?=
+ =?Windows-1252?Q?gj5Wqwl5iTW/8GOvRUxthSJyYMn8d7dPPYytu1c9skRZ7jzsiaLgUSAG?=
+ =?Windows-1252?Q?3tV2eDgecXi+s902JIEVoc3E37u77FXKlOPPsD3wPZrkT8qyZvUxfPCC?=
+ =?Windows-1252?Q?7Gvm+f3H85oahz2LTkyo283MBH1E4AM8n2I+THsQphArGJR8p6FOwZrR?=
+ =?Windows-1252?Q?UXvOLI1nNFoqd/lZT5ZGNxwWuUc0gvuw6vV8haVcOPUG4llvAcrxFCfi?=
+ =?Windows-1252?Q?rYVOLJWzKjVbdpknQcrlBuGepS0mhNX2DdCZH5yM9dVVKibdJ1lhLqeb?=
+ =?Windows-1252?Q?0Ibt+525SGbJ7aapPkxYEUXZf9n0zcgJFmYE9rsN6HMUiCFVa4xdH0Jn?=
+ =?Windows-1252?Q?U9SoapYJPfYMcHr/tKFuci21Q+ij0J7fjfEaXcxDqO7h4ekl/OUExEla?=
+ =?Windows-1252?Q?BwHdBVSWHRgJK57qXBNMwGyUiKBqbFHP4UoyDm/c4rZoaNeg1k5xsD7U?=
+ =?Windows-1252?Q?coZ4E/zk5sBbScyVvTJU2+4CtMKb3/TtMH5/Rc55xYawfaF3FgOE6i7n?=
+ =?Windows-1252?Q?YxaPQaLQl1Z/MH/3HmMUVUkojmvYQHXr1J+hOY4D2b1G7ImzxvgF9/bX?=
+ =?Windows-1252?Q?/fl3NbJUkE5jQj5GTdUdv/9JvwBXc2yXYsjlkWv5HxLBDhKtAEgU9yOw?=
+ =?Windows-1252?Q?GHoxHNpVJAx1Xc0BPT343igC1g6kMieYUOgYUagZzq6GZg4gbLPdHfMM?=
+ =?Windows-1252?Q?/a5xe15nmHcNQhz5XWft6N3ws3Php04un01wEguBfHWFPwUwM1hgLltN?=
+ =?Windows-1252?Q?04Vocss7CwFL+stoTm0PeBuneB3JL9ewyts=3D?=
+MIME-Version: 1.0
+X-OriginatorOrg: rockymountnc.gov
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BLAPR09MB7332.namprd09.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 84fe7fd9-e2f4-4a4c-0f7d-08da52e5e1ef
+X-MS-Exchange-CrossTenant-originalarrivaltime: 20 Jun 2022 17:54:11.7562
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 5a3beb9b-9a95-4338-a882-92ce32d58db9
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CO6PR09MB8405
+X-StripMime: Non-text section removed by stripmime
+Content-Type: text/plain; charset="Windows-1252"
+
+Hello again!
+
+Wish I had more information for you, but both the former director and the former exhibits curator were unable to confirm about the molds. The former director (mid-1980s) thought he recalled there being some molds in storage, but he couldn't be sure that they were the Diplodocus molds. I am working to track down another possible contact that he gave me that was with the museum in the mid-1970s.
+
+In the meantime, I did find reference to them possibly being sent to Houston, Texas in "Bone Wars" by Tom Rea:
+
+[cid:686a7b71-e377-45d2-8659-22e71bcd21c0]
+
+
+
+I am not sure where the author obtained this information, but maybe someone in Houston could confirm and give more insight.
+
+Just wanted to give you an update, if I am able to get in contact with anyone else I will let you know. You are welcome to cite me regarding the flooding.
+
+Regards,
+Leigh
+
+
+
+________________________________
+From: Mike Taylor <sauropoda@gmail.com>
+Sent: Wednesday, June 15, 2022 11:38 AM
+To: Leigh White <Leigh.White@rockymountnc.gov>
+Cc: Adrienne Lynch <adrienne.lynch@rockymountnc.gov>; Brooke Edwards <brooke.edwards@rockymountnc.gov>; Nathan Dolde <Nathan.Dolde@rockymountnc.gov>
+Subject: Re: Diplodocus cast in Sunset Park (1960)
+
+
+[EXTERNAL EMAIL] DO NOT CLICK links or attachments unless you recognize the sender and know the content is safe.
+
+Hi, Leigh, thanks for getting back to me! I had no idea things were that bad in 1999, how appalling.
+
+Would it be OK to cite your personal communication that all exhibits and records were destroyed in the flooding? I've not been able to find a published source to that effect, as newspaper reports and suchlike understandably focus on other consequences of the flood.
+
+It will be great if the fromer director and curator you mention are able to fill in more of the blanks.
+
+Thanks again,
+
+-- Mike.
+
+
+On Wed, Jun 15, 2022 at 3:51 PM Leigh White <Leigh.White@rockymountnc.gov<mailto:Leigh.White@rockymountnc.gov>> wrote:
+Good morning Dr. Taylor,
+
+Thank you for contacting us and sharing the newspaper article. Yes, our Museum was previously located at Sunset Park; unfortunately, the museum, all exhibits and records were destroyed in flooding following Hurricane Floyd in 1999. I have only been with the museum since 2003, so I am not familiar with the pre-flood exhibits/artifacts, but I am in contact with a former director who was here in the mid-1980's and the exhibits curator who was here just before the flood. I will get in touch with them and see if they have any information for you.
+
+I will let you know what I find!
+Leigh
+
+
+
+________________________________
+From: Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>>
+Sent: Wednesday, June 15, 2022 8:46 AM
+To: info@imperialcentre.org<mailto:info@imperialcentre.org> <info@imperialcentre.org<mailto:info@imperialcentre.org>>
+Subject: Re: Diplodocus cast in Sunset Park (1960)
+
+
+[EXTERNAL EMAIL] DO NOT CLICK links or attachments unless you recognize the sender and know the content is safe.
+
+Hello, Rocky Mount Children's Musuem.
+
+Just checking that you got this inquiry?
+
+Thanks,
+
+-- Mike
+
+
+On Sat, Jun 11, 2022 at 1:42 AM Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>> wrote:
+Dear Rocky Mount Children’s Museum,
+
+I am a vertebrate palaeontologist specialising in the the giant sauropod dinosaurs. I am currently working with Steve Sroka of the Field House Museum in Vernal, Utah, on a historical account of the many casts that were made of the Carnegie Museum's iconic mounted skeleton of Diplodocus.
+
+As you may know, ten casts were made and sent to capital cities around the world. The less known part of that story is that in 1957 the molds were used for an eleventh time to create a concrete cast which was mounted outside the Field House Museum in Vernal, Utah. It is this cast that is the focus of my and Steve's present project.
+
+Today I discovered a newspaper article (attached), dated 14 July 1960, saying that the molds from which the Field House's replica dinosaur bones had been made were shipped to the Rocky Mount Children's Museum on or about that date. This is fascinating news as the molds themselves are historically significant objects at this point.
+
+I am writing to ask:
+* Does the museum have any documentation of its own about the arrival of the molds?
+* Was the Diplodocus ever cast and mounted as planned?
+* What happened to the molds?
+* Was the museum located on or by Sunset Park in 1962, and subsequently relocated to its present address?
+
+Many thanks for your help!
+
+Dr. Michael P. Taylor
+Department of Earth Sciences
+University of Bristol
+Bristol BS8 1RJ
+ENGLAND
+
+
+
+--- StripMime Report -- processed MIME parts ---
+multipart/related
+  multipart/alternative
+    text/plain (text body -- kept)
+    text/html
+  image/png
+---
+
+
