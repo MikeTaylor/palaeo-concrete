@@ -1,0 +1,112 @@
+"You may certainly use my comments"
+
+
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:a1c:7215:0:0:0:0:0 with SMTP id n21csp3948445wmc;
+        Tue, 21 Jun 2022 18:47:47 -0700 (PDT)
+X-Google-Smtp-Source: AGRyM1uCH5Uk07ospyeTWNAzyY/T1Ig24LBgQYeth5NB0mCwelsuQg66HZc9VcSeZe2QRVIzyLUN
+X-Received: by 2002:a05:622a:1994:b0:304:f463:148c with SMTP id u20-20020a05622a199400b00304f463148cmr1108365qtc.358.1655862466994;
+        Tue, 21 Jun 2022 18:47:46 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1655862466; cv=none;
+        d=google.com; s=arc-20160816;
+        b=bD+OUGm/1YsuQ6ezfH0z5EMaXxaXAIaxdfgkU7k7xYWDEhgJGuhvoZTBPcL0tXKw7F
+         H3I5hgJ2QnUQc8O3nWm+JgY/AVkt4neVNBFPHBlb6CeSpxgOeHVrYK2jYNI+YqV+jUgI
+         S9jVM3sBJ2WpzLFIeLvQD6Sfd6W5qsASKBhmEk73sNDZ2czWZr4KKuz6HD16SmYu49s7
+         +WjUof0FQicPSZBZqvuvTwRisbQ9qJ1qkOYBqscNazczs8g+Io8nHZxrxuEc6cmmQ1r/
+         V4bWLDefbn3upMxXqpIyKc2kg2UWGFwOZy0rjiYw8QpFd3dpgZK13gEDEtBSnX6+VVm6
+         OSFA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:to:from:importance:in-reply-to:subject:date
+         :savedfromemail:message-id:dkim-signature;
+        bh=u2CddQNBXArcm01ve5FlB5Pg92bX7s3UyNT7F/g0ra4=;
+        b=KmBFfk0EiFlFZjK/wDJJtGDUf1ekOyHo7o9bC3YQZoTh3FG4hBsltEk0O+U8dqMfcc
+         7HX4wiPnsuRyiS09SHRqo6FLxQY3uhm4N0Ma89bip/9NQvGVulczCUmG6GjC7ldIjpdH
+         y2A4gxR4w95JnVHk+i8Bkd5J01z3x4Pc4qWL4gZXr6WYhvNksElS1jIoIIFsdvu0HjTI
+         1XTPIis7kUoUBsV4l2uL+vTxsLRlqJq0itH1cvgrJle/HEhOdKDHPYc+nqQ9bxT7LdEE
+         1L/VATrvc1llo+BTv8qMF0Uc909j11pKtXnYhMg2PdGuG9PrD3xjx2Ba6xAi4Uzsralp
+         iUbg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@yahoo.com header.s=s2048 header.b=EItNvlVN;
+       spf=pass (google.com: domain of dletasi@yahoo.com designates 74.6.128.84 as permitted sender) smtp.mailfrom=dletasi@yahoo.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.com
+Return-Path: <dletasi@yahoo.com>
+Received: from sonic312-22.consmr.mail.bf2.yahoo.com (sonic312-22.consmr.mail.bf2.yahoo.com. [74.6.128.84])
+        by mx.google.com with ESMTPS id k17-20020ac85fd1000000b0030520762574si12607195qta.200.2022.06.21.18.47.46
+        for <sauropoda@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 21 Jun 2022 18:47:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of dletasi@yahoo.com designates 74.6.128.84 as permitted sender) client-ip=74.6.128.84;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@yahoo.com header.s=s2048 header.b=EItNvlVN;
+       spf=pass (google.com: domain of dletasi@yahoo.com designates 74.6.128.84 as permitted sender) smtp.mailfrom=dletasi@yahoo.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=yahoo.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1655862466; bh=u2CddQNBXArcm01ve5FlB5Pg92bX7s3UyNT7F/g0ra4=; h=Date:Subject:In-Reply-To:From:To:From:Subject:Reply-To; b=EItNvlVNbVamP3tjl3g3J7NEM43sQlfIJHkAr33neN7yKZRjn8+i65KyUldRu6uQF3R1XywSzwKpffpT9lsys2Nf+k5G2P8S+dUxlE4rWHN2DMWv6kFQvgvXKDwYuCD6PGoVXn856K4NrrrnwyvHZEKEDgylrF/MU4UpRavkIGtqR3SMPRPIMLSfmd/JRogTP5K1vOhNuio7PzHcNJropUzvV4JP3Jyn476JuERqk6VQKVd+qonA+x2yViE5BKzKOKSvX2v+VD8ygCfawiz8QX4JV+VoeXMtTcKtHy2ZGA7Svdj8MhZLSav3eX4UVw9M2InLycQDzEgMGK2rTJF56Q==
+X-SONIC-DKIM-SIGN: v=1; a=rsa-sha256; c=relaxed/relaxed; d=yahoo.com; s=s2048; t=1655862466; bh=mXsxNSBnZJUnWAnGOIF8Qs+JaeX9x+L6N2ms56TZTha=; h=X-Sonic-MF:Date:Subject:From:To:From:Subject; b=Ns2BfXWarMubyykJAegmZYMgoMvANa0exWNDqdSd2pzWAdWIJ64jQKF+rqI+oY36yfJDfrcLadllH8bf631pIyd2SU8KIpSH1AX4RsqMLVhKtt03lKuYcNmpL6YtOoWPTTbDj02tibE7kGZ9CEq6por0kh1usQ2rQQ4jGAK9dAGP6PBH+VfBWKxWCdThEVTlcODa6Ep08KRMwpJwJDRLG1WByLS821ux0ifRAW6obLShzqAJynFBMM/80Vn6VnkMBhMehfOX8Dzz87Xq+R/lwMk0qQGa/AMINy2SCz65oV8hHf8uzoqnhqk1JTbu8ZWDClLg/9udIvZKov0l4uOQ1Q==
+Message-ID: <256380927.1727509.1655862466586@yahoo.com>
+X-YMail-OSG: TLEzKcEVM1lbArrKcj3ySR90UpeHJEuPiAMYQ01vYN_ba2_g6Ph4PpxEr0vKSE8
+ p8G9FUZIYmPeeZ4ZruNbSH.E9bPpxnce6X7rm3BPINaEC4lsXzERJTu7U5NZXGyTofAgOFpy2ci3
+ FMqbYD872RERVlreJcfNkp_Y79frM0eaza7U4x6hTI4h4IFRAS0UOXKbM5rDRyp074iiLDATsPZW
+ 4HQVihqqrMCTNbZb0qA97stB2fwWAU2Ecf96MROflArq5cGLyXd7tIRzns9KmIzVf2GfgDK7yqCh
+ ijQ9iSYgMwoNAZJT7Izgsbnn6qW4V6nyWUB6YOWLNKF0xpO7X7abq2h2fozQjjMMwhyA5QLVsYcJ
+ r3ukXl2ell9Mhy3fyejrR5GlwVWyZCZ.8RtkvmMfh9D6yq4VaNDTx5SjcbiszAodZQqG2D8uEmnT
+ ToK.qh3L1CRMDtTKZU9axBR2gbBjHhk_uhakDWdO7dsLUIAYr5ErkRKrZ_XvlFra3bypBuHklouD
+ CixcTio4ga9DbY8dR2jRFRqNWZEtaAGg0IbYPhWc4MJuPqIAlXke5VZZXDUcxqGKtcCxuP3Kxdwp
+ l9_bTCw9.UI._Aebw331nYiBGN_oJIrUlegz.xmAM667fRyOixSRbzBiO9F4f7TvmBbnVx20LPjJ
+ 207yuUXVDxsafHU1rzV4abwsCkWV_Bx33Em_7I3p25jY_.NJoks2ooM5sk7z8axt5ubGfYVorNry
+ ZgsAdSex6UprxacNfwnTTop2cj3VsSQDEG4rHiiShww.Gx.E09evzcJdM1za4B02QcN0RJi3WFdH
+ T4hTxvMQbidImrTCi1RvbjsL4futF.pPPtrvDgUrLLPqFVsW7e8OiZrNFErBQbs_fAnrmyXmTndn
+ BbVtZKBsbdPaZIF5q7iKJoqh_orJE7c4.GYQjD5az2Noq391bKTXb4Tmr4qN7pi0DxdXv2ghnmG_
+ vXPzV82vENQwMyJwbpY63_clh5ssramBGRMqG4eLl9UstYetrRTQ3Rk.8duLigFN9H8ZqXnozKPL
+ RjMATujhkLATnDxzEiVb1xdAxfL3j8oZA7vmqAnHGqdcIZu44f7Fwfgmr3j4MwJ9Jz3VJP1Wz2dw
+ GZUquP_cVfKQ01TBa1rlrEhIBbN3jr96TTBuSqWr5eWB7qThjiCoIMqwP8Uoycnyyu.qhhTi6Adh
+ HpZ8vu.Ehds_HDOddDCE3MstpJpSevdvMrjFHgu_s9IkqcUkSwlHeWA7DWOLeIiSvTmAelWRUupp
+ dtxqAmFtG706kyokLkrDY6DNUlt1TzyWpF_gbeFu4MyfMPY.Gr8SKKK6.Ix.NUm_FX5fKLkbOuGW
+ xHL_PiOw3_bbpAE_KWcl3Dj9AcpAEX7zJhF6ZUl4wtAUETfVcHpyIbRuoKQ3yYug39kbtwbbgvUU
+ 3IbCJnqMILZtEghjUiXfvmmzysh8Yl9E6s4NBFwzzUthD3GUgX25rzcOoYeKvrtqejQWUDCbUUvm
+ 5uAF82ABHhq19bC62nowSB_kZATZ8l7lIuB06wkeveYcf1lpbZGgNTAVz0vAH91Zu5abQFrcZ4Av
+ ctJ0KrJ3NBUFqP6NhcMdBhIAeXuogr5PjBERUwEO_osFmX_gCOeGE3hqTy1qZGvaxd2Cpb5TKw29
+ sBqfmKCrk7.54B667NeRRFdlBKNm0Sjh5kaNQBs6zipvFFQkB8OHUwE0xRJq2nIQPrmdDZuMoXX7
+ HtpPcQLzOlaxWlIMLU3A1X4F6Kk73wnFv71Ctgz3Zy2VBsUTqud0KKDisedBiaZ390gMDDzq.ITe
+ 3R8Km8qkSuYmiWnfxWdPrygj1FvNCUDM65una8rYDufLva19BaBolNBlkqRRtcNX2VnR2CrKO_yY
+ mDBO85R15OGFc1fMKy7d3KQvi9GWqvv9AETB2hxqdtJe0FVIdTjkSVvHDf48QxeUMicscROg71PZ
+ 7qTet5N7Fz_N.h49Y6mQZA2581Rvhy.UdwWurJ7a6o9.1IuY9.1FqnUlq74PpRp4ybiNfK45MDnQ
+ JSCDt.kCWEZ_GYs2k1IDC4Js.3hYFwavzqMjCfdLY2voZlp_jNvtvjFzp_FHDii23VFvcUEXEfL_
+ yIauhqdR24uOUNuyasSNCp5F.P5bIAQlI3u1QXz553bYxbu3cEWLu638jWa.CaO.uQX1pm_4dC3e
+ wBf9Q4nnWWWwmBAtrvyY5xGtMEgyVKawuTdKsZJ9bYGDvyvyYdigXwSIEzuzKEvndl69.rSXSn8i
+ dQ0ThAY_yvvsDpxOMNXkBl_MSr4TBBspWnDZJJo.OatYq8jCD9G5I2me5GEyoSkfuaTqysU3xua.
+ Zvw--
+X-Sonic-MF: <dletasi@yahoo.com>
+Received: from sonic.gate.mail.ne1.yahoo.com by sonic312.consmr.mail.bf2.yahoo.com with HTTP; Wed, 22 Jun 2022 01:47:46 +0000
+Received: by hermes--canary-production-bf1-8bb76d6cf-xkxwt (Yahoo Inc. Hermes SMTP Server) with ESMTPA ID d6a331d9b1d3a2e32544a9517bda6e18;
+          Wed, 22 Jun 2022 01:47:42 +0000 (UTC)
+SavedFromEmail: dletasi@yahoo.com
+Date: Tue, 21 Jun 2022 21:47:40 -0400
+Subject: Re: Diplodocus
+In-Reply-To: <CACnMvBZ=A4uzor9q8cn-2G=A4uxgbWXZAxW3X1jV99cJd-JvKw@mail.gmail.com>
+Importance: normal
+From: dletasi <dletasi@yahoo.com>
+To: Mike Taylor <sauropoda@gmail.com>, dletasi@yahoo.com
+MIME-Version: 1.0
+X-Mailer: WebService/1.1.20280 mail.backend.jedi.jws.acl:role.jedi.acl.token.atz.jws.hermes.yahoo
+Content-Length: 36097
+X-StripMime: Non-text section removed by stripmime
+Content-Type: text/plain; charset=utf-8
+
+Hey Dr. Taylor,Wow that's alot of questions but it was a fairly big project.It unfolded rather slowly over the coarse of 1996 and 97.Our museum in Tampa was racked with major financial blunders for several decades most being poor business decisions. Our education staff were excellent and this area of expertise kept the institution financially from completely collapsing.¬†A dear friend of mine at MOSI Susan Swartz wrote a National Science Foundation grant for $500k that was accepted. Our board became interested in purchasing a cast of a Sauropod from China that was so rediculus in the photographs that I suspected that it was a Chinese character rather than an dinosaur specimen. I contacted Mark Norrel to see if he knew anything about the Chinese specimen as I knew he was working with China and the Mongolian government and could possibly know about the specimen.¬†Based on Mark's information he had known about it but recommended to me to contact Paul Sereno in Chicago as he was just back from China and had seen the actual animals skeletion. Paul told me that he did see the sauropod mounted in a provincial museum and suspected that it was not correct in almost every way. It was based on one or two bones and even these two elements were covered with plaster masking much details.¬†I explained to Paul that I was concerned that our officials would put it on display and could demean our educational value as an institution. Paul kindly wrote a detailed letter recommending to pursue a better choice of specimen to our directors.At the time we were featuring a Triceratop exhibit that Dr. Jim Kirkland had created with Dinomation International. Jim agreed to do a lecture about his work in Utah during this exhibit. While he was attending this event we spent time together and at a dinner party he suggest that we could use Diplodocus skeletons and that Jim Maddsen had casts available. Our directors agreed to approach Jim and see if he would negotiate a reasonable cost estimate for our project.Jim offered to cast two skeletal specimens that could be unique for our museum as an icon. I called Mark Norrel and asked him about their mounting of Barosaurus in the AMNH and details regarding what to consider in mounting a cast un an upright position and he went into detail about how RCI used hollow core cast to eliminate weight on the neck and head to keep it from collapsing.¬†Next I petitioned our directors to over see the overall design as I was concerned that unless we used accurate detailed skeletal drawing that it would be difficult to place the mounts in the space required. They wanted it in the main lobby and was not to restrict evening events as the space was used for public dinner engagements and rotating exhibits. I solved this problem by raising the upright mount on a ten foot high pedestal and used an existing concrete bunker for the traditional mounting of the one on all fours. .¬†However I decided to raise the one leg up suspended as in defense and I questioned Bob Bakker about the stance it could take and he approved the concept. While designing the drafts of these mounts related to the existing floor plan I encountered the problems with fixing it in our space related to the papers that specified it was 85 feet long. This is when I challenged Jim to place the skull and axial elements to get a correct length. I also contacted Phillip Currie about the tail after seeing an article that referenced to their tails used as a whip. We wanted to place the tails in action stance and not tail dragging but¬† possibly used in defense. To make sure that my drawing were accurate related to the posture of the upright mount I contacted Kent Steven as he was working on computer generated postures of upright sauropods. He agreed to assist in running his program over my design to make sure the physiology and anatomy was accurate.I was convinced from Mark Norrels conversation that RCI was the only way to go on having it mounted and of course Jim Maddsen made the hollow core casts. My son was attending South Dakota school of mines in South Dakota and we were able to visit Jim's casting lab by driving to Salt lake City.Jim and I agreed to a contract price for for the entire project in conjunction with Peter Mays mounting and our board accepted his offer. Once the casts were completed they were shipped to Canada and we talked with Peter Mays about the scope of this project and he considered it one of his top project only second too his tyrannosaurus rex mount featured in Jurrasic Park movie for Steven Spielberg.¬†Fortunately I was able to fly to Peter's company and have the skeleton mounted in their back lot to check for accuracy. The only detail that was off was the tail on the upright mount that would have hit a balcony near it. We corrected that and when it was installed at MOSI it fit perfectly. Kent Steven's attended our opening and gave lectures while at our museum.You may certainly use my comments just let me review them before publishing if possible. It was skull 11161 that we used from the Carnegie Institute. The upright mounted skeleton was recently moved to a new position in the "Kids In Charge Gallery" as the original mount was in the main museum building gallery lobby..The fellow that I was writting about that's working a sauropod site in Wyoming is Chris DeLorey of Biofacts Inc here in Cocoa Florida. Chris has worked with the Wyoming Dinosaur Center in Wyoming and at the Dana Quarry as well. I'm currently working with the Scientific Educational Training Service of Hernando Florida. We are providing educational paleontology lab workshops with tittle one schools and the Citus County Library System for home school students. We will soon be setting up a paleontology laboratory classroom in a tittle one 7th and 8th grade school in Levy County Florida. I retired from MOSI in 2008. As this museum has been hit financially over the last decade the original staff that were involved in this project have moved to other locations and companies or retired. I only know of two employees that are still currently on staff from that period. Neither were involved in the Assemble a Sauropod project.As for high quality photos of the Skeleton at MOSI all were generated by MOSI on line. They may have originals in their files. Also I found your scientific papers on file on the internet and enjoyed you paper on Our Sauropod Necks are all Wrong. Right on!¬†DaveSent from my Galaxy
+-------- Original message --------From: Mike Taylor <sauropoda@gmail.com> Date: 6/21/22  6:47 PM  (GMT-05:00) To: dletasi <dletasi@yahoo.com> Cc: Mike Taylor <dino@miketaylor.org.uk> Subject: Re: Diplodocus On Tue, Jun 21, 2022 at 5:31 AM dletasi <dletasi@yahoo.com> wrote:Dr. Mike TaylorHi, Dave, thank you so much for getting¬†back to me so quickly. Lots of fascinating stuff in your message. First order of¬†business: would it be OK, please, to quote parts of this message (and hopefully subsequent ones) as pers. comms. in one or two upcoming papers?Yes I made the comments about the construction project for the Tampa Florida mounted skeletons. I ran this project in 1997 and designed the postures of each mount. I also traveled to the casting company in Canada as they were under construction with Peter Mays.Oh, I know Peter! He's one of my co-authors on one of the in-progress papers. I'll see what he has to say about this project, too.We worked in concert with Phil Currie on tail dynamics, Robert Bakker on leg positioning, Dr. Mark Norrel from AMNH on the upright posture technique in Barosaurus and computer analysis of the upright posture with Dr. Kent Steven's.¬†That is quite the roll-call. I didn't know Norell had done more work on rearing postures -- it seems he was at least somewhat sceptical when the AMNH mount when up in 1991, though obviously sufficiently on board to allow the project to continue.¬†I spent time with Dr. Jim Maddsen in his Utah lab while the skeletons were being casted.Hold on, though, Jim Madsen's Utah outfit was Dinolab -- but I thought you said above the Peter May's group in Canada (RCI) did the casting? Or were both of them somehow involved?¬†They were constructed by forming hollow core resin casting using light weight foam to reduce the over all weight distribution. As far as I know these mounts are the only pair of Diplodocus Skeletons with one standing upright.I don't know of _any_ other rearing Diplodocus mount, paired or not: do you?Jim Madsen used the cast at the Vernal Field museum for his molds under contract negotiations.Yep, the concrete Diplodocus of Vernal is another of the historical papers I'm working on right now. (Sometimes it's a bit tricky keeping them all straight in my head!)The skull cast we used was a Carnegie institute casting for accuracy and we had John McIntosh review our design.That would probably¬†be a skull based on¬†CM 11161. Does that ring a bell?¬†It took about 18 months to complete the entire project.Over the coarse of the project and working with the casts I recognized some interesting anatomy characteristics that could be researched.Please tell me you wrote this up!¬†I've been working with a friend of mine who has a sauropod site in WyomiWARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+ng as we speak and he has been noticing interesting details related to their physiology from various co workers he has been contacting regarding new Diplodocus specimen from the Dana Quarry.My¬† focus of work is in vertebrate paleontology related to mammalian carnivores however over the years I been involved in various projects on dinosaurus due to my employment by several museum here in Florida. I worked in education development and curated several major dinosaur exhibits.When I've been searching for more information on the Museum of Science and Industry in Tampa, what I mostly find is sad stories that they have closed 85% of the museum, e.g.¬†https://www.tampabay.com/news/business/tourism/mosi-to-close-part-of-its-building-to-save-money-before-move-to-downtown/2324358/Do you know if your Diplodocus mounts survived the brutal cull?(BTW., I assume that is them in the photo in that article. If you have better photos, I would love to see them.)¬†I can help you connect with paleontology specialists if you need help.¬†I think at present I am in contact with everyone I need for this project, but thank you.-- Mike.
+J⁄‚§»¶y©¢ªiÆá≤«ù0É•™Ì≤k•∂*ZÆﬂ⁄ñ◊´ù´bΩÎ^∆ﬂÈï®ßµÏmnárëÍmµÏm˛fñ
