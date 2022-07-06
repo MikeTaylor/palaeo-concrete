@@ -1,0 +1,336 @@
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:a1c:7215:0:0:0:0:0 with SMTP id n21csp4886658wmc;
+        Wed, 22 Jun 2022 18:06:54 -0700 (PDT)
+X-Received: by 2002:a17:906:37c6:b0:70c:f9f:f0c5 with SMTP id o6-20020a17090637c600b0070c0f9ff0c5mr5605962ejc.743.1655946414403;
+        Wed, 22 Jun 2022 18:06:54 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1655946414; cv=none;
+        d=google.com; s=arc-20160816;
+        b=aIk902F6wFpvJQV9L2bxl5C3+JtvcM2bhldXBrJeWpx4kCNGLazB3Z3oW03WgXF5qF
+         ISfOI01Hp2qPJFUnHEgdswsBp1FDfe1ax13qRPxj00OQ56KQs/h/Rt4SpF1ANR+Pf6V3
+         nhVqSJCcYfIqeyVYs/K2O5cDPA0n2kTGR0Ehgkf4d2tZB4rPk84zV7m3GSuoqR7Ad6rl
+         iTlVrfs79t264EALTb0zYzu+dwyvknQsSX5aqDcJqVfmsC2uUugDMe+S2qEpshdI++7u
+         GQwSi6QkTsbWxSxmPRRQjqprniBbxtRikDycDx/94ohd9sroGitH8caDWuXqCBCOVeCi
+         xzjA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=XclO8vjDJ9X5sBTFHFO6raymeUNNOT0dpTxsdvm3+GY=;
+        b=baVUbQnCzNRjz1zZD8ADaD4W5BZUSXDD65UZtDYBF9b8m2EIoON2k9w3IIaFOo1K9i
+         /PasWJqBLfhncdcCSlySOwZCbJCoOOJF2C8y+/6sU/079TnREQxMt7OwmhL8YLxIbO/V
+         TbPAJKxaXq7Z9SU9/YAe+CW0yuy89WcqlBP0+A5i8U1A95Wy/MlipwcD2UaF86ZmmF12
+         euugvf3hjwbsjGcVpJHyXNBijQt7eGeX+JY7eReDyHR0qQopvMAgmBoPOSobEVeXGyRX
+         dqj4SyH9Gn4XKK8+j+NmXaocEMGiGqN616byg8zK5xoo0+FeZfF34xCP8V749M+DCOgk
+         bh/g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@fossilcrates-com.20210112.gappssmtp.com header.s=20210112 header.b=Rebn324n;
+       spf=pass (google.com: domain of brian@fossilcrates.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=brian@fossilcrates.com
+Return-Path: <brian@fossilcrates.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id va1-20020a17090711c100b006fecf1a1d95sor8205787ejb.116.2022.06.22.18.06.54
+        for <sauropoda@gmail.com>
+        (Google Transport Security);
+        Wed, 22 Jun 2022 18:06:54 -0700 (PDT)
+Received-SPF: pass (google.com: domain of brian@fossilcrates.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@fossilcrates-com.20210112.gappssmtp.com header.s=20210112 header.b=Rebn324n;
+       spf=pass (google.com: domain of brian@fossilcrates.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=brian@fossilcrates.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=fossilcrates-com.20210112.gappssmtp.com; s=20210112;
+        h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+         :cc;
+        bh=XclO8vjDJ9X5sBTFHFO6raymeUNNOT0dpTxsdvm3+GY=;
+        b=Rebn324n1ERddfEIZ1S3DVDbQYxXbN0qzXTivQ/6AiggHZ45ninIYuyK4lgGYvP4MA
+         5ATVVqt3AkQVoBv3kqVzamYXPFwaQtHTv5qBgKPucjc/nqeSFfmM81ivynJo+GBKY+li
+         uGEwKPtBqy31KMNBLpycHnW50ERnO28Gqr0EAIA2n3YM58Bx5i9Wk8ykyKWEgprSweGb
+         B6nfYEL9fKyJLrP4MSFxkZQNAauMjkonvm7sU0cVg87+FTNr/mzuXn9fWjnwvrqL8FGQ
+         cdENW5ZjhyWfZDf1UYPP6lwyMxvxIkguBsYaGXkyzcbVVLoMJDNYN/kB2JYqUMqxaCnw
+         qNVw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+         :message-id:subject:to:cc;
+        bh=XclO8vjDJ9X5sBTFHFO6raymeUNNOT0dpTxsdvm3+GY=;
+        b=mnWv/UPaFVP6394vt/Es06tVkpb3E54csmadHSMTVuuwr8mv+sWj5cNfLgFtsuc5Zu
+         6Ic+FGDr47vYrwjqfwlAUBTvhvZ+39na+j0c5ACrBegBzpN7BPTZX+xrRn19G2XgL1ZR
+         /jRqFgVYzrrQZwcSME36d+4JXVleBQLUwJWU8lQoG7ZU6cay5XgK3EfqfBcz0YbfQjwo
+         qv89qjDBZzPU0nhQcF6krQ9TWgEjIklU6pTNSNZOw2cltA4CmxKOnlxjgY4fzhFAJviL
+         D0KdIcWfxNFlU+ZchVqizr8ZbFSuVoDIIhDqNVxPEdaNrpPweDg3lnZLDRnIRN3zjIpI
+         S2GA==
+X-Gm-Message-State: AJIora/543vhCgNPsQzIYr88ZpH91ZtdGzbwZAlVSHJRwZTk9GqeySaj
+	8MNIe2SZVYCk8mgAISjp1PVp3v9ChYQuCmc0l5HELYhBi2kHWFs0
+X-Google-Smtp-Source: AGRyM1uARhn3YPPvTP+6FS4CTK/u24ZMmymbvwKpw5nktRM1A8rBLlNaziI/QighscV8DxLD4uTeltCHRzAkOrU2XRc=
+X-Received: by 2002:a17:907:7f1d:b0:71d:ea75:e533 with SMTP id
+ qf29-20020a1709077f1d00b0071dea75e533mr5884066ejc.78.1655946413702; Wed, 22
+ Jun 2022 18:06:53 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAOf8E3reoHQd72H29oTf6SaBFhNj=3Of13FMrvosBZj5uDDVgA@mail.gmail.com>
+ <CACnMvBaVz+RuDUFJM-Y4wruacNO3jFOPW3=-dR1g7RzkQVGmjQ@mail.gmail.com>
+ <CAOf8E3oneX48iAN0tu_TBJRFnqnwDXza+KCq8FXnsOT+5jErNQ@mail.gmail.com>
+ <CACnMvBYC2RUvLt5a2Nt0QuLu=njUWn+60aqGRkNMZ=AK8qiy2A@mail.gmail.com>
+ <CAOf8E3qkdY1SpMY=eJTE=y5+VP7m4MC9_xVQtM-65vEF6eH=gA@mail.gmail.com>
+ <CACnMvBZfC86KmcNui6BGhK4_zxVtfEHqQ8=7UgvPAZ0d+4m-jQ@mail.gmail.com>
+ <CAOf8E3okmikRcwPGP5V6Dpv4AT4G80x72fQTsNfmhk2EX8FzbQ@mail.gmail.com>
+ <CACnMvBYAQ-XkESY_h4U6-WwxCdBmB_aiTfrnHm5u3msE=JvuBw@mail.gmail.com>
+ <CAOf8E3oNnB6aD3NFXDKxTkXjm_4nNdB2vHV4NuLBOtRf18OV5w@mail.gmail.com>
+ <CACnMvBY1CRG4=z-zx88ou3wfvJ9XT0_NGZUx+x4U=xg6wz_1mg@mail.gmail.com>
+ <CAOf8E3pdKw+KFEKLoVmKGbiEcqt+_TvZ1sZ0-5hpynk9NXX-4w@mail.gmail.com> <CACnMvBZL0XhRYDBs0VURgbpNRQ_8uujq=yqqdedAHDU4UktAAQ@mail.gmail.com>
+In-Reply-To: <CACnMvBZL0XhRYDBs0VURgbpNRQ_8uujq=yqqdedAHDU4UktAAQ@mail.gmail.com>
+From: Brian Curtice <brian@fossilcrates.com>
+Date: Wed, 22 Jun 2022 18:06:42 -0700
+Message-ID: <CAOf8E3quGFnftoam6kn3OZ6SU5EfFE37mRzKOcHmqCJ8w-Ed7g@mail.gmail.com>
+Subject: Re: Baro new sp?
+To: Mike Taylor <sauropoda@gmail.com>
+Cc: Mathew Wedel <mathew.wedel@gmail.com>, Ray Wilhite <ultrasauros@hotmail.com>
+X-StripMime: Non-text section removed by stripmime
+Content-Type: text/plain; charset="UTF-8"
+
+This one? https://imperialcentre.org/childrens-museum-science-center/
+
+Sure re Houston!
+
+
+[image: photo]
+*Brian Curtice, PhD*
+Founder and CEO, Fossil Crates
+
+480-280-7132| Brian@FossilCrates.com
+
+www.FossilCrates.com
+<http://facebook.com/FossilcratesDrBC> <http://instagram.com/fossilcrates>
+<http://twitter.com/fossilcrates> <http://500px.com/bcurtice>
+<https://www.youtube.com/channel/UCJ34j3FmGhrrUbaeJZzTdOQ/>
+[image: App Banner Image] <https://www.fossilcrates.com>
+
+On Wed, Jun 22, 2022 at 6:05 PM Mike Taylor <sauropoda@gmail.com> wrote:
+
+> Sorry, no idea where "hospital" came from — I meant the Rocky Mount
+> Children's Museum!
+>
+> Sad news about Houston. But helpful. OK if I cite it as a pers. comm.?
+>
+> -- Mike.
+>
+>
+> On Thu, Jun 23, 2022 at 2:03 AM Brian Curtice <brian@fossilcrates.com>
+> wrote:
+>
+>> Which hospital?  The Rocky Mountain Hospital for Children?
+>> https://rockymountainhospitalforchildren.com/
+>>
+>> I was in Houston in 1995 and didn't see, nor hear, of them being in the
+>> collections fwiw.
+>>
+>> BC
+>> [image: photo]
+>> *Brian Curtice, PhD*
+>> Founder and CEO, Fossil Crates
+>>
+>> 480-280-7132| Brian@FossilCrates.com
+>>
+>> www.FossilCrates.com
+>> <http://facebook.com/FossilcratesDrBC>
+>> <http://instagram.com/fossilcrates> <http://twitter.com/fossilcrates>
+>> <http://500px.com/bcurtice>
+>> <https://www.youtube.com/channel/UCJ34j3FmGhrrUbaeJZzTdOQ/>
+>> [image: App Banner Image] <https://www.fossilcrates.com>
+>>
+>> On Wed, Jun 22, 2022 at 5:57 PM Mike Taylor <sauropoda@gmail.com> wrote:
+>>
+>>> The paper on the CDoV has a longish section in which I try to trace to
+>>> fate of the original molds, which are themselves now objects of some
+>>> scientific and historical value. I got as far as the Rocky Mount Children's
+>>> Hospital, and rumours (which I think are incorrect) that they made their
+>>> way to the Houston Museum of Nature and Science, but after that the trail
+>>> goes cold. If you know where they are — or how and when they were
+>>> destroyed — then I very much want to know!
+>>>
+>>> -- Mike.
+>>>
+>>>
+>>> On Thu, Jun 23, 2022 at 1:55 AM Brian Curtice <brian@fossilcrates.com>
+>>> wrote:
+>>>
+>>>> Not the originals (yet ;-))
+>>>> I'm on a spree!
+>>>>
+>>>>
+>>>> [image: photo]
+>>>> *Brian Curtice, PhD*
+>>>> Founder and CEO, Fossil Crates
+>>>>
+>>>> 480-280-7132| Brian@FossilCrates.com
+>>>>
+>>>> www.FossilCrates.com
+>>>> <http://facebook.com/FossilcratesDrBC>
+>>>> <http://instagram.com/fossilcrates> <http://twitter.com/fossilcrates>
+>>>> <http://500px.com/bcurtice>
+>>>> <https://www.youtube.com/channel/UCJ34j3FmGhrrUbaeJZzTdOQ/>
+>>>> [image: App Banner Image] <https://www.fossilcrates.com>
+>>>>
+>>>> On Wed, Jun 22, 2022 at 5:54 PM Mike Taylor <sauropoda@gmail.com>
+>>>> wrote:
+>>>>
+>>>>> Well, that is a VERY mysterious comment!
+>>>>>
+>>>>> Are you able, at least, to tell me whether they are or are not the
+>>>>> original Carnegie molds?
+>>>>>
+>>>>> -- Mike.
+>>>>>
+>>>>>
+>>>>> On Thu, Jun 23, 2022 at 1:49 AM Brian Curtice <brian@fossilcrates.com>
+>>>>> wrote:
+>>>>>
+>>>>>> I can't (yet) comment on the mold's origins
+>>>>>>
+>>>>>>
+>>>>>>
+>>>>>>
+>>>>>> [image: photo]
+>>>>>> *Brian Curtice, PhD*
+>>>>>> Founder and CEO, Fossil Crates
+>>>>>>
+>>>>>> 480-280-7132| Brian@FossilCrates.com
+>>>>>>
+>>>>>> www.FossilCrates.com
+>>>>>> <http://facebook.com/FossilcratesDrBC>
+>>>>>> <http://instagram.com/fossilcrates> <http://twitter.com/fossilcrates>
+>>>>>> <http://500px.com/bcurtice>
+>>>>>> <https://www.youtube.com/channel/UCJ34j3FmGhrrUbaeJZzTdOQ/>
+>>>>>> [image: App Banner Image] <https://www.fossilcrates.com>
+>>>>>>
+>>>>>> On Wed, Jun 22, 2022 at 5:48 PM Mike Taylor <sauropoda@gmail.com>
+>>>>>> wrote:
+>>>>>>
+>>>>>>> You have the molds, too! Which ones? I know that the molds which Jim
+>>>>>>> Madsen made from the CDoV are in storage at RCI since Dinolabs' old
+>>>>>>> building was condemned, but the only other molds I know of are the original
+>>>>>>> ones made by Serafino Agostini and co. at the Carnegie Museum in the early
+>>>>>>> 1900s. Surely you don;t have those?!
+>>>>>>>
+>>>>>>> I've not seen Jack's letters, only digitised notebooks.
+>>>>>>>
+>>>>>>> -- Mike.
+>>>>>>>
+>>>>>>>
+>>>>>>> On Thu, Jun 23, 2022 at 1:39 AM Brian Curtice <
+>>>>>>> brian@fossilcrates.com> wrote:
+>>>>>>>
+>>>>>>>>
+>>>>>>>> I own a complete cast, the molds, and 28ish other skeletons (long
+>>>>>>>> story again).  You pick the pose!  Not isn't Tampa's.  It is in crates at a
+>>>>>>>> storage facility.
+>>>>>>>>
+>>>>>>>> I CAN NOT WAIT to read your historical accounts!
+>>>>>>>>>
+>>>>>>>>
+>>>>>>>> Actually, you don't have to: the in-progress manuscripts are all
+>>>>>>>> publicly available:
+>>>>>>>> https://github.com/MikeTaylor/palaeo-superbaro
+>>>>>>>> https://github.com/MikeTaylor/palaeo-baromount
+>>>>>>>> https://github.com/MikeTaylor/palaeo-concrete
+>>>>>>>> https://github.com/MikeTaylor/palaeo-carnegie
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> Thanks for the links!  I'll check 'em out.
+>>>>>>>>
+>>>>>>>> It is Jack's letters that hold some gold :-)
+>>>>>>>>
+>>>>>>>> BC
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> [image: photo]
+>>>>>>>> *Brian Curtice, PhD*
+>>>>>>>> Founder and CEO, Fossil Crates
+>>>>>>>>
+>>>>>>>> 480-280-7132| Brian@FossilCrates.com
+>>>>>>>>
+>>>>>>>> www.FossilCrates.com
+>>>>>>>> <http://facebook.com/FossilcratesDrBC>
+>>>>>>>> <http://instagram.com/fossilcrates>
+>>>>>>>> <http://twitter.com/fossilcrates> <http://500px.com/bcurtice>
+>>>>>>>> <https://www.youtube.com/channel/UCJ34j3FmGhrrUbaeJZzTdOQ/>
+>>>>>>>> [image: App Banner Image] <https://www.fossilcrates.com>
+>>>>>>>>
+>>>>>>>> On Wed, Jun 22, 2022 at 5:34 PM Mike Taylor <sauropoda@gmail.com>
+>>>>>>>> wrote:
+>>>>>>>>
+>>>>>>>>> On Thu, Jun 23, 2022 at 1:17 AM Brian Curtice <
+>>>>>>>>> brian@fossilcrates.com> wrote:
+>>>>>>>>>
+>>>>>>>>>> MOAL has a collections manager now and the Baro is owned by the
+>>>>>>>>>> museum now, it is in its forever home.  They are pursuing various
+>>>>>>>>>> accreditations fwiw.
+>>>>>>>>>>
+>>>>>>>>>
+>>>>>>>>> That is the best possible news!
+>>>>>>>>>
+>>>>>>>>> I now have a cast of Dippy (long story...) if you need one :-)
+>>>>>>>>>>
+>>>>>>>>>
+>>>>>>>>> You own a complete Carnegie Diplodocus cast? Where on earth do you
+>>>>>>>>> keep it! And how did you acquire it? It's not the non-rearing one from
+>>>>>>>>> the Museum of Science and industry in Tampa, is it?
+>>>>>>>>>
+>>>>>>>>> Any eta on 9024 paper? After spending a week with Ray and D'Angelo
+>>>>>>>>>> with Supes we learned a ton more about it, we'd love to point to your
+>>>>>>>>>> description, but we are calling it Supes based on our new field info,
+>>>>>>>>>> photos, and letters between Jack/Jim, etc.
+>>>>>>>>>>
+>>>>>>>>>
+>>>>>>>>> ETA is hard to predict because I sort of need to complete the
+>>>>>>>>> manuscripts in reverse order of when I started them. There's 14 pages of
+>>>>>>>>> single-spaced manuscript so far on that one (and 19 pages on the AMNH Baro,
+>>>>>>>>> and 11 pages on the concrete Diplodocus, and 24 pages on the Carnegie
+>>>>>>>>> Diplodocus. I would hope to at least have a completed first draft
+>>>>>>>>> manuscript done on 9024 before the end of the year.
+>>>>>>>>>
+>>>>>>>>> I'm beginning to marshal some troops to get us into the 6341 case,
+>>>>>>>>>> not sure when it will transpire but will let you y'all know.
+>>>>>>>>>>
+>>>>>>>>>
+>>>>>>>>> That would be awesome! I know the walkway case was opened a couple
+>>>>>>>>> of years ago (for reasons I don't know) and Emanuel Tschopp was able to get
+>>>>>>>>> decent dorsal and left dorsolateral view photos. Nothing more than that,
+>>>>>>>>> though, the vertebrae didn't come out of their tomb.
+>>>>>>>>>
+>>>>>>>>> Retirement lets Rick not have to manage people but prepare Green
+>>>>>>>>>> River fossils and then excavate more of 'em.  He'll make more with less
+>>>>>>>>>> headache. :-)
+>>>>>>>>>>
+>>>>>>>>>
+>>>>>>>>> Ah, now THAT is a kind of retirement I can get right behind!
+>>>>>>>>>
+>>>>>>>>> I CAN NOT WAIT to read your historical accounts!
+>>>>>>>>>>
+>>>>>>>>>
+>>>>>>>>> Actually, you don't have to: the in-progress manuscripts are all
+>>>>>>>>> publicly available:
+>>>>>>>>> https://github.com/MikeTaylor/palaeo-superbaro
+>>>>>>>>> https://github.com/MikeTaylor/palaeo-baromount
+>>>>>>>>> https://github.com/MikeTaylor/palaeo-concrete
+>>>>>>>>> https://github.com/MikeTaylor/palaeo-carnegie
+>>>>>>>>>
+>>>>>>>>> Of course, at this stage they are all littered with the "XXX"
+>>>>>>>>> markers that I use to me "work to be done here".
+>>>>>>>>>
+>>>>>>>>> I wonder if Jack has anything in his letters that might help on
+>>>>>>>>>> those?
+>>>>>>>>>>
+>>>>>>>>>
+>>>>>>>>> Actually, I was disappointed at how little I found in the
+>>>>>>>>> notebooks that I've been sent copies of. They gret bulk of the material is
+>>>>>>>>> tables of measurements.
+>>>>>>>>>
+>>>>>>>>> -- Mike.
+>>>>>>>>>
+>>>>>>>>>
+
+
+--- StripMime Report -- processed MIME parts ---
+multipart/alternative
+  text/plain (text body -- kept)
+  text/html
+---
+
+
