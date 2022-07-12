@@ -1,0 +1,305 @@
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:a05:600c:3494:0:0:0:0 with SMTP id a20csp2933428wmq;
+        Mon, 11 Jul 2022 09:30:21 -0700 (PDT)
+X-Google-Smtp-Source: AGRyM1vLV43KZjLhp5K4gkc7/Z1k/HAALjhHtnwXyZnU7mNNuM7Dru19MJie1rSx8Pr8lcYueGg+
+X-Received: by 2002:a17:906:ef90:b0:72b:4a96:83fc with SMTP id ze16-20020a170906ef9000b0072b4a9683fcmr8718257ejb.453.1657557021571;
+        Mon, 11 Jul 2022 09:30:21 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1657557021; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=QIUf4fCWrd6kNCYMqwXPvAtzDc28T+eEILxQoBWcpTwgeEHpAJ0SZ5AqU4U7sO0iNK
+         hBjtlppbSHbXgeaD+Gte1JbyObFYKYH+aPI9cYiAylv2EFLAhFkN9AeTWSfdbxDDL4p/
+         ywV0S//kYlomiPtsihaM9W1bUIzN/kVxT/a2CFYLvpjNmB8+Xsa2brheAu7GOOhuoa3/
+         DwG5dBspicYLiP/AjRjcwMX/wYXmhuiZgsjViWCuaRREA3J6ODDmyl5ghloukMxu6WoW
+         pAowlbatXwzhDJ/1LzbVPluqll2KH9qoz9u6+Om+7OophQbS0Ol8/hprw2vp/ipOAIgC
+         qNkQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:suggested_attachment_session_id:content-language
+         :accept-language:in-reply-to:references:message-id:date:thread-index
+         :thread-topic:subject:to:from:dkim-signature;
+        bh=/r8qg8vbZ0vFAn8WngqLIUwtr5nKcoMqNA/sp5aucyU=;
+        b=msrsqgS6h2jz9dYerQJq7XCkaqa70xiwi6UYFAagSOLRe7ws3jFxJIEsZsJHoGAgsN
+         +HDwmwOPRULA2QoxcpIFK3BzDuNK2tLEOflfXxIrQwMG7juR+33Bkig07ehYbKo1wOHd
+         3zUhD5dDrKLJbU89oULLoHg/wTYDegeaMowhFzDVuwVHWO6/Dd6r8h6EZM0THAU8clkz
+         zpQLxb2CcjrTGrDtb5RN+21iJSO+VkbPta3SMsv65511dBWGZntwfagymTiSg3sakhcI
+         6ouH8UtCqCpQLDV4eCFKQVRHqczHtB+rfnYt1DoF7DBFpzNVSw8NgXQJtIqKOMUDCBrp
+         mk6A==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@rockymountnc.onmicrosoft.com header.s=selector2-rockymountnc-onmicrosoft-com header.b=dXEfHvjq;
+       arc=pass (i=1 spf=pass spfdomain=rockymountnc.gov dkim=pass dkdomain=rockymountnc.gov dmarc=pass fromdomain=rockymountnc.gov);
+       spf=pass (google.com: domain of leigh.white@rockymountnc.gov designates 40.107.89.80 as permitted sender) smtp.mailfrom=Leigh.White@rockymountnc.gov;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rockymountnc.gov
+Return-Path: <Leigh.White@rockymountnc.gov>
+Received: from GCC02-BL0-obe.outbound.protection.outlook.com (mail-bl0gcc02on2080.outbound.protection.outlook.com. [40.107.89.80])
+        by mx.google.com with ESMTPS id n13-20020a50cc4d000000b0043555742fb6si9159292edi.224.2022.07.11.09.30.21
+        for <sauropoda@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 11 Jul 2022 09:30:21 -0700 (PDT)
+Received-SPF: pass (google.com: domain of leigh.white@rockymountnc.gov designates 40.107.89.80 as permitted sender) client-ip=40.107.89.80;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@rockymountnc.onmicrosoft.com header.s=selector2-rockymountnc-onmicrosoft-com header.b=dXEfHvjq;
+       arc=pass (i=1 spf=pass spfdomain=rockymountnc.gov dkim=pass dkdomain=rockymountnc.gov dmarc=pass fromdomain=rockymountnc.gov);
+       spf=pass (google.com: domain of leigh.white@rockymountnc.gov designates 40.107.89.80 as permitted sender) smtp.mailfrom=Leigh.White@rockymountnc.gov;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=rockymountnc.gov
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=m8FJiZKoFOdX6k/8Oa1KmiEZZus64DRba700rfS713YbUlE/jZ8CtAAIQeVOBGiKxvd2Nhf1+jh1mNfmwcMd4UF0NaJHnEhZUW+zEJPhrxHg/vhQWYrClwqEfGhzxIye2dTsq8qPbO1PZGSUnyWI4WPYfJpl4PO1FAoqWMF8firwgWBx+2eVj6iMvbaxQStWjraB4WdSbPZoG0WZntbO1EmbZYbGL4GfyCwv/ESloA5wIZDKqAWf5+qfDCjTXCAq+situ+LcD/6Enx9G/UlwhX5zhqUi+zpheyduagO2YNzk5Ke4orwYnORE+67rhQQRjED4eZE5DUTJWlKEwEr97A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=/r8qg8vbZ0vFAn8WngqLIUwtr5nKcoMqNA/sp5aucyU=;
+ b=Cwc4PSKtS8xDPV+TkfGhC48s9vuTz5RzuBe15QtN78idaQi8mub16a3dXEdhlRYb1BTYb/3VpEzUYmKp30XSMjLaP7BN1In8keK9z5QOMCSne9QWImbHENeCK1hA87ld8B6p3ItPrA3QwAvwkvTZzWMrGyBQbxvL9av2hc8MfamTWnr51YUrR0jGAN2G6H2xXK4hAUDTdlIXPhdlR4nz/jt+KPnfS49N7+H+SorLQma/n5ZG3FNQrPnZXYN+UQ50vZS4rhvtaEnYttbhJjN1EB9qFzQZDH5G3ceyCC8adqwFitD+Qgtdg7htabvKp8RaoL3jspTJGxjRviGORvgGrw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=rockymountnc.gov; dmarc=pass action=none
+ header.from=rockymountnc.gov; dkim=pass header.d=rockymountnc.gov; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=rockymountnc.onmicrosoft.com; s=selector2-rockymountnc-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=/r8qg8vbZ0vFAn8WngqLIUwtr5nKcoMqNA/sp5aucyU=;
+ b=dXEfHvjqlIC0tPrIxn9qWWShqsvxGJ4Yy5UvRN4isZRJ0U7fH/w/HElsegtezCYoP7JqrhCX/X0ti3TucY/QWVzmbnaawllfh30O5AlOZRpigHLj/7Fh/EnpLnxKC3VTHMqEpZjcd3jwoR22dYRxlhAY99OEqUPoMd9QxpKamto=
+Received: from BLAPR09MB7332.namprd09.prod.outlook.com (2603:10b6:208:2a9::11)
+ by BY5PR09MB5748.namprd09.prod.outlook.com (2603:10b6:a03:253::14) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5417.16; Mon, 11 Jul
+ 2022 16:30:16 +0000
+Received: from BLAPR09MB7332.namprd09.prod.outlook.com
+ ([fe80::90a9:ef4a:1f5c:844c]) by BLAPR09MB7332.namprd09.prod.outlook.com
+ ([fe80::90a9:ef4a:1f5c:844c%6]) with mapi id 15.20.5417.026; Mon, 11 Jul 2022
+ 16:30:15 +0000
+From: Leigh White <Leigh.White@rockymountnc.gov>
+To: Mike Taylor <sauropoda@gmail.com>
+Subject: Re: Diplodocus cast in Sunset Park (1960)
+Thread-Topic: Diplodocus cast in Sunset Park (1960)
+Thread-Index:
+ AQHYfSxM8oF493vQW0m+WG5jRCE2f61QcYgAgAAY7oWAAAByzIAAFqGAgAf5MDKAAEwlAIAYT9IAgAg5GwCAAAF7ag==
+Date: Mon, 11 Jul 2022 16:30:15 +0000
+Message-ID:
+ <BLAPR09MB733238C011A1D5F7FB86591780879@BLAPR09MB7332.namprd09.prod.outlook.com>
+References:
+ <CACnMvBYKQ88R4nLdnmDSUDZOHKvUhkJqXVGLUASZFHJT0Oo-Eg@mail.gmail.com>
+ <CACnMvBatAFgnT_03cN6DSJsqu5GS46ubBktzvFyFg4=iqOKXDw@mail.gmail.com>
+ <BLAPR09MB715656E4AD8F5EE6ECE92E93E6AD9@BLAPR09MB7156.namprd09.prod.outlook.com>
+ <BLAPR09MB7332CDE7EC7CFD1F8EC1F70280AD9@BLAPR09MB7332.namprd09.prod.outlook.com>
+ <CACnMvBYYspNVa8kNtxp9PdO34jQ=Q11=iiPVYm2jM81D9F2EbQ@mail.gmail.com>
+ <BLAPR09MB73328D37D21ABC546A61263880B09@BLAPR09MB7332.namprd09.prod.outlook.com>
+ <CACnMvBZ0TWyx3p+mLXYn5b1J375r7cYQBTtgXJa3JkFicEiFhQ@mail.gmail.com>
+ <CACnMvBavDTM3=X_+2T4vj093BSg5JxhLeLMF4ZecjsZSQzw9ag@mail.gmail.com>
+ <CACnMvBYr-SywPGLDHsZZ+q0e=JA4ibHbZZs4Z_iDNyc1yYQkZQ@mail.gmail.com>
+In-Reply-To:
+ <CACnMvBYr-SywPGLDHsZZ+q0e=JA4ibHbZZs4Z_iDNyc1yYQkZQ@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+suggested_attachment_session_id: 84ee8a74-c1d9-2edd-0df7-9455f06fb79b
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=rockymountnc.gov;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 05d570f4-c0e9-481c-26cd-08da635aa2e4
+x-ms-traffictypediagnostic: BY5PR09MB5748:EE_
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ I/YafItV1WVJcME2Jshtl/MSMDoL0V4kTS1/rVqP6o8T4oGM0CNoIEMGW0RwZiXYYz9iuM2F5NleDnt3FuBW65VIdHcI/L4IelPVpbDpX+o0h4ZK62RjTrmzBoVM7fNtfO7EuU3k9n0rFvlcXFT6Q3Y56YIuIJxbhAvem8i5J2zNLnSTIQvWr7DHXSFym0S4+npGqjm8UKoXU2JC0UmuUp8LUAyNCgnRfrksdl7pUeoeMtTPW8uc9QMH0ugBZ7U89qNyw7YcPBUD/BBUon7AybDqdf2OQHJslX/rDceTFrQ0I+vjlPQi1N3ftnrtSyD/Bkborsslc+v3s8GO4/CwHdbnoiRuzVii7ZleosnJFigo6IbRsgUt162wfOD+YGOcC/SPWtVeCn8Qaif3G65gL9l9YZLpKWq/PKQePiok9KKRuUtf10X0MreVhvzuDXxHxIhP/aNICzioGu4oGfVJ1vhOKBd2NB7kw3fzkiHEuTJ/oF3/dG3TMrZFVJ2lbikcX9gdW77Z8i397qOR5YynFDRMrD4k6rsfO1dijJO+H3vIXb7JVIV64qFFh3+xA0HUFm5GRqq9Jl7nsKlBqUszNQJXwya8aOkgART7AAEovQp5n+BacFMcnR2AOqri9HsYbIrSlyy0WhD/xreg1uzR+lOnGULqopTFwKpCFxpwDohjVyaoMaWx2WctpRAOjGmVr0H7J3bxxEeeFymnIZafHB06XVmum3fw/2s3onhFTHVo7csmtYD681hjEXDwkNT5Il9XtrJY+je2fRKeRCr9NertYmgB+QOqev2iiNy9RplzHEXBO2SqtYYVB9dJVQDPJ2tk7C18Gf1K95u+unHB+egNbhjx5vm1Lin6z6ogUcGFdE8ncqcNUsrAsbRzOzuQe2PW6Gs2uOPW8xJVLyS3RA==
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:BLAPR09MB7332.namprd09.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230016)(366004)(9686003)(8936002)(2906002)(52536014)(86362001)(498600001)(8676002)(6506007)(26005)(53546011)(966005)(7696005)(33656002)(38070700005)(5660300002)(83380400001)(19627405001)(99936003)(55016003)(38100700002)(186003)(166002)(71200400001)(64756008)(66556008)(76116006)(66946007)(6916009)(122000001)(66476007)(66446008);DIR:OUT;SFP:1101;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?Windows-1252?Q?8rU+7xLVRVxofvFGGZhxu5fWeEd1MdSy5DjLLGh8qljo66mOrhakjvDJ?=
+ =?Windows-1252?Q?Lj6V1UFDAR8MTkN18LGhUZbLQ2sEa2np6T46hTBOlhqXBTgNn6I+yL7G?=
+ =?Windows-1252?Q?Men/ge5nH3tvw5kWb+WEzZ/km1GPnOKTEnV19fNHaZ2kWTZqGJ7un8pu?=
+ =?Windows-1252?Q?zdap1pHqP+ZEuFmriHrXOwfh5MOoRnBi3NnyfPkik0wyTHjhWlu1+xsQ?=
+ =?Windows-1252?Q?MUrk073sNOUZzO1tuVHmojM92I1AohoUqzGiDdNeoKou/+ZTs6nj0CXJ?=
+ =?Windows-1252?Q?H7vX/Uenj0WjTkbD436EZ3xyGtDDIu3AzjUJuYe7qf7QBH5E4FvfdSPZ?=
+ =?Windows-1252?Q?1tDZe1ctt+pCclNqG6tlkj+E+4Qe4qKywoUZ5FX9gf+LRsAopzDf96qB?=
+ =?Windows-1252?Q?kZoNOOv6jUnmUsoedKm5BZ/3sMovSc0QpeGZ23ZGrf94pfF4y73+ZZhw?=
+ =?Windows-1252?Q?urUEBjC3KiWX3Wrjp5T7vqnNQzk171g+gVWDmN+7BH3XPoTBGFQeMzJN?=
+ =?Windows-1252?Q?NOF0b9AsylQ2cH5AE/wl5uQ6jEp2cft9xu2XoZmPv1ofxtK8y9cza4UK?=
+ =?Windows-1252?Q?/R4kAQ3PcgTwT/Kjv86GlTzXIhyDVONQ2PsGONcqZFtBPShqqbuKWsKA?=
+ =?Windows-1252?Q?ewo8mPHO6ATPlt+Vo7BC1JIIb9ZiwmmCv3NJRqgiDmS8qCPmIGJUL5ZE?=
+ =?Windows-1252?Q?AUTuB/Ema2Hg04vzTTNifPHbqnTH55LFDpsVcDiGG0iSe72ChiNIZaAo?=
+ =?Windows-1252?Q?Xyvc8eXCVs1PIxq21rjQmorjyFRNvsgx//qSIz7f6HL1NPD+M189KU/o?=
+ =?Windows-1252?Q?fCr/vWEvLg9babAAO8TvcQP9TWYtVe8Cn99zSvCMoK3cY4BA0gZpXlKb?=
+ =?Windows-1252?Q?VTzrOJ8cDj0m7M27GzP7K0sVj/VeNZ4Ksy8ERzGbSk6deuVPA88Y3Ckl?=
+ =?Windows-1252?Q?e1BzpVYqOCxIuUM8RSvxMY7eCqiKoZ/kVobF16zkX6+L49wiNKS4QOl2?=
+ =?Windows-1252?Q?NuTB397SNOdSxPWy47pH4gR7EUFvMrWYr9TrQYm3jSgLPSDME2LEjRMl?=
+ =?Windows-1252?Q?j9zrlJeJlLs74yWNnTpVTapdurFSxQcm0334MaKGVrJX038R4yOOdkK7?=
+ =?Windows-1252?Q?INMMoS3uYaWiW4VyJit+9fBenj4gsdgNl5MR5ZKrRamD5yUQ8cMUiuuX?=
+ =?Windows-1252?Q?6Gx/KDzvaywqwRuXwOaW63930uc8f3D//g0CQA0odihbSJYevbyxNz+7?=
+ =?Windows-1252?Q?vIG0rpOy0AC+okYR1jPfs4pRe+qXGvHMVWgX2OInq2gZunxm9LjwFp2H?=
+ =?Windows-1252?Q?9m4DQEYh6LG0bSCColnF5tB5Blic/YssT/76BV5WysKkc1Z2VbVw+Bk9?=
+ =?Windows-1252?Q?I59VZZBuj39dwCFx67CCnJcDgDGmtcV9CdySNrlHgz+vXKF3Y9ONpqjK?=
+ =?Windows-1252?Q?jUiE8e3Rd2OxN/vdwlX217W4fhck7dELFZUFrr7cwEpEJ+2jFRIbGgOQ?=
+ =?Windows-1252?Q?8AXGPjhM7w1EGbwJ24ihevBAhtxNIs98MhWiBtKc3mhq+4Jnx1nKebB8?=
+ =?Windows-1252?Q?JRyzLef3xd84fPoZyBB0pLkX4P6xOhDTJu++K+cqHfvo2lS7ZIotOO26?=
+ =?Windows-1252?Q?qPbl1SrJNnKMRDs2zrMayClPbpRefjhDrLA8t4iHNBmoW9pD+f+2Fy2Y?=
+ =?Windows-1252?Q?0aDoOoWUp+doBnxO+pfR4unDF2UM7sUzQzcKLhabug18zELqSHgvgA?=
+ =?Windows-1252?Q?=3D=3D?=
+MIME-Version: 1.0
+X-OriginatorOrg: rockymountnc.gov
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: BLAPR09MB7332.namprd09.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 05d570f4-c0e9-481c-26cd-08da635aa2e4
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Jul 2022 16:30:15.6945
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 5a3beb9b-9a95-4338-a882-92ce32d58db9
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY5PR09MB5748
+X-StripMime: Non-text section removed by stripmime
+Content-Type: text/plain; charset="Windows-1252"
+
+Good morning, my apologies, I have been out of the office since July 1.
+
+1. Would it be OK to cite your personal communication that all exhibits and records were destroyed in the flooding? I know this seems pedantic to ask, but lots of journals require an explicit statement. Yes
+2. Similarly, would it be OK to cite you as saying that staff who worked at the museum in the 1980s do not recall any such cast? I have forwarded your link (#5) to the former Director, I'll let you know what I hear back from him.
+3. When I mention you in the acknowledgements, what should I give as your job title at the museum? Curator of Education
+4. You say "both the former director and the former exhibits curator were unable to confirm about the molds.". Would it be OK to give their names? I will confirm with them and let you know.
+5. You say "The former director (mid-1980s) thought he recalled there being some molds in storage, but he couldn't be sure that they were the Diplodocus molds". I wonder if you could follow up on this? The Diplodocus molds would have been big: individual elements — as can be seen at https://collections.lib.utah.edu/details?id=1212242&q=1212242 — were in many cases two or three feet across, and the complete set of molds would have weighed several tons. Perhaps with this photo and information, the director would be more confident about whether the molds he recalled were these ones?  I have passed this along and will let you know.
+6. You say "I am working to track down another possible contact that he gave me that was with the museum in the mid-1970s". I really appreciate your going to these lengths for me! Has there been any fruit from this line of enquiry?  Jan Engle Hicks, Curator of Education from 1971-2002, remembers the casts being at the museum, on exhibit, when she started work in 1971. She does not recall if they were still part of the museum collection in 1999. Ms. Hicks said that the museum was located next door to a municipal water treatment facility that also flooded and released unknown substances and chemicals, anything that may have otherwise been salvageable in that area was deemed "contaminated" and was required to be destroyed/discarded.
+
+
+
+________________________________
+From: Mike Taylor <sauropoda@gmail.com>
+Sent: Monday, July 11, 2022 10:46 AM
+To: Leigh White <Leigh.White@rockymountnc.gov>
+Subject: Re: Diplodocus cast in Sunset Park (1960)
+
+
+[EXTERNAL EMAIL] DO NOT CLICK links or attachments unless you recognize the sender and know the content is safe.
+
+This is my regularly scheduled reminder of my followup questions :-)
+
+Thanks!
+
+-- Mike.
+
+
+On Wed, Jul 6, 2022 at 10:12 AM Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>> wrote:
+Hello again, Leigh. Just following up a few threads ...
+
+1. Would it be OK to cite your personal communication that all exhibits and records were destroyed in the flooding? I know this seems pedantic to ask, but lots of journals require an explicit statement.
+2. Similarly, would it be OK to cite you as saying that staff who worked at the museum in the 1980s do not recall any such cast?
+3. When I mention you in the acknowledgements, what should I give as your job title at the museum?
+4. You say "both the former director and the former exhibits curator were unable to confirm about the molds.". Would it be OK to give their names?
+5. You say "The former director (mid-1980s) thought he recalled there being some molds in storage, but he couldn't be sure that they were the Diplodocus molds". I wonder if you could follow up on this? The Diplodocus molds would have been big: individual elements — as can be seen at https://collections.lib.utah.edu/details?id=1212242&q=1212242 — were in many cases two or three feet across, and the complete set of molds would have weighed several tons. Perhaps with this photo and information, the director would be more confident about whether the molds he recalled were these ones?
+6. You say "I am working to track down another possible contact that he gave me that was with the museum in the mid-1970s". I really appreciate your going to these lengths for me! Has there been any fruit from this line of enquiry?
+
+Oh, that turned out to be more things than I expected! Sorry about that.
+
+BTW., I have tried to get information from the Houston Museum but they are surprisingly difficult to contact, and not very communicative when they reply at all. It's a strange situation.
+
+-- Mike.
+
+
+
+
+On Mon, Jun 20, 2022 at 10:56 PM Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>> wrote:
+Leigh, this is AMAZING! So much information is emerging from so many tendrils of exploration about these casts and molds. I really appreciate what you're doing here, and will of course mention you in the acknowledgements.
+
+Would it be OK to give the former directory's name?
+
+-- Mike.
+
+
+
+On Mon, Jun 20, 2022 at 6:54 PM Leigh White <Leigh.White@rockymountnc.gov<mailto:Leigh.White@rockymountnc.gov>> wrote:
+Hello again!
+
+Wish I had more information for you, but both the former director and the former exhibits curator were unable to confirm about the molds. The former director (mid-1980s) thought he recalled there being some molds in storage, but he couldn't be sure that they were the Diplodocus molds. I am working to track down another possible contact that he gave me that was with the museum in the mid-1970s.
+
+In the meantime, I did find reference to them possibly being sent to Houston, Texas in "Bone Wars" by Tom Rea:
+
+[cid:181831c1d3fcb971f161]
+
+I am not sure where the author obtained this information, but maybe someone in Houston could confirm and give more insight.
+
+Just wanted to give you an update, if I am able to get in contact with anyone else I will let you know. You are welcome to cite me regarding the flooding.
+
+Regards,
+Leigh
+
+
+
+________________________________
+From: Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>>
+Sent: Wednesday, June 15, 2022 11:38 AM
+To: Leigh White <Leigh.White@rockymountnc.gov<mailto:Leigh.White@rockymountnc.gov>>
+Cc: Adrienne Lynch <adrienne.lynch@rockymountnc.gov<mailto:adrienne.lynch@rockymountnc.gov>>; Brooke Edwards <brooke.edwards@rockymountnc.gov<mailto:brooke.edwards@rockymountnc.gov>>; Nathan Dolde <Nathan.Dolde@rockymountnc.gov<mailto:Nathan.Dolde@rockymountnc.gov>>
+Subject: Re: Diplodocus cast in Sunset Park (1960)
+
+
+[EXTERNAL EMAIL] DO NOT CLICK links or attachments unless you recognize the sender and know the content is safe.
+
+Hi, Leigh, thanks for getting back to me! I had no idea things were that bad in 1999, how appalling.
+
+Would it be OK to cite your personal communication that all exhibits and records were destroyed in the flooding? I've not been able to find a published source to that effect, as newspaper reports and suchlike understandably focus on other consequences of the flood.
+
+It will be great if the fromer director and curator you mention are able to fill in more of the blanks.
+
+Thanks again,
+
+-- Mike.
+
+
+On Wed, Jun 15, 2022 at 3:51 PM Leigh White <Leigh.White@rockymountnc.gov<mailto:Leigh.White@rockymountnc.gov>> wrote:
+Good morning Dr. Taylor,
+
+Thank you for contacting us and sharing the newspaper article. Yes, our Museum was previously located at Sunset Park; unfortunately, the museum, all exhibits and records were destroyed in flooding following Hurricane Floyd in 1999. I have only been with the museum since 2003, so I am not familiar with the pre-flood exhibits/artifacts, but I am in contact with a former director who was here in the mid-1980's and the exhibits curator who was here just before the flood. I will get in touch with them and see if they have any information for you.
+
+I will let you know what I find!
+Leigh
+
+
+
+________________________________
+From: Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>>
+Sent: Wednesday, June 15, 2022 8:46 AM
+To: info@imperialcentre.org<mailto:info@imperialcentre.org> <info@imperialcentre.org<mailto:info@imperialcentre.org>>
+Subject: Re: Diplodocus cast in Sunset Park (1960)
+
+
+[EXTERNAL EMAIL] DO NOT CLICK links or attachments unless you recognize the sender and know the content is safe.
+
+Hello, Rocky Mount Children's Musuem.
+
+Just checking that you got this inquiry?
+
+Thanks,
+
+-- Mike
+
+
+On Sat, Jun 11, 2022 at 1:42 AM Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>> wrote:
+Dear Rocky Mount Children’s Museum,
+
+I am a vertebrate palaeontologist specialising in the the giant sauropod dinosaurs. I am currently working with Steve Sroka of the Field House Museum in Vernal, Utah, on a historical account of the many casts that were made of the Carnegie Museum's iconic mounted skeleton of Diplodocus.
+
+As you may know, ten casts were made and sent to capital cities around the world. The less known part of that story is that in 1957 the molds were used for an eleventh time to create a concrete cast which was mounted outside the Field House Museum in Vernal, Utah. It is this cast that is the focus of my and Steve's present project.
+
+Today I discovered a newspaper article (attached), dated 14 July 1960, saying that the molds from which the Field House's replica dinosaur bones had been made were shipped to the Rocky Mount Children's Museum on or about that date. This is fascinating news as the molds themselves are historically significant objects at this point.
+
+I am writing to ask:
+* Does the museum have any documentation of its own about the arrival of the molds?
+* Was the Diplodocus ever cast and mounted as planned?
+* What happened to the molds?
+* Was the museum located on or by Sunset Park in 1962, and subsequently relocated to its present address?
+
+Many thanks for your help!
+
+Dr. Michael P. Taylor
+Department of Earth Sciences
+University of Bristol
+Bristol BS8 1RJ
+ENGLAND
+
+
+
+--- StripMime Report -- processed MIME parts ---
+multipart/related
+  multipart/alternative
+    text/plain (text body -- kept)
+    text/html
+  image/png
+---
+
+
