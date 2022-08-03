@@ -7,6 +7,8 @@ Department of Earth Sciences, University of Bristol, Bristol BS8 1RJ, UK.
 <dino@miketaylor.org.uk> (corresponding author)  
 **Steven D. Sroka**
 Utah Field House of Natural History State Park Museum, 496 E. Main Street, Vernal, UT 84078.
+**Kenneth Carpenter**
+niversity of Colorado Museum, Boulder, CO 80309.
 
 Feel free to read [the in-progress manuscript](TaylorEtAl-concrete-Diplodocus-of-Vernal.docx).
 
