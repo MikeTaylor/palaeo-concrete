@@ -42,13 +42,13 @@ Two files were sent by Steve on 28 July 2022 in an email titled "Additional UFH 
       * "The cement skeleton weighs 8 tons, is 76 feet long, and the head rises 21 feet above the ground."
       * "It is made up of approximately 600 separate pieces [...] The third winter and spring were spent assembling the pieces to make up the individual "bones." Some vertebrae, for instance, were made up of 8 or more casts to complete them. These pieces were glued together with fiberglass and reinforced with iron rod."
       * "The casts of the more complicated bones, such as large vertebrae, were made here at the museum" (did we know that?).
-      * THere is a bit more on the mechanics of building the cast.
+      * There is a bit more on the mechanics of building the cast.
       * An incorrect order is given for the assemble (forelimbs too early).
   * pages 8-19 (January 1990)
     * Anonymous draft of a paper (probably by Madsen): Diplodocus carnegiei: Production and Design of Replica Skeletons
       * "We have also used a variety of plastics in different combinations for casting individual bones" of the Dinolab casts. Details are given.
       * "[...] an Italian artisan, who painstakingly prepared approximately six hundred, individual, very intricate, plaster molds".
-      * "It is evident now that the decision at that time to dismantle and repair the skeleton was a wise one, since close examination during preparation and stabilization has relealed incipient fracturing and surface deterioration due to weathering of numerous elements [...] Such damage would have been progressively more difficult, if not impossible, to repair after a few more years of precipitation and the temperature extremes typical of the harsh winters and hot summers of the Uintah Basin."
+      * "It is evident now that the decision at that time to dismantle and repair the skeleton was a wise one, since close examination during preparation and stabilization has revealed incipient fracturing and surface deterioration due to weathering of numerous elements [...] Such damage would have been progressively more difficult, if not impossible, to repair after a few more years of precipitation and the temperature extremes typical of the harsh winters and hot summers of the Uintah Basin."
       * "The manus and pes were earmarked for replacement with elements (or casts) porovided by (?), when it was confirmed that those in the original mount were camarasaurid rather than diplodocid (McIntosh, 1981)."
       * "The fate of the initial set of molds is somewhat in question, but Wann Langston (personal communication, 1989) suggests that they seem to have been lost, strayed, or stolen during transport from ? to ?. Principles contacted in regards to the disposition of the molds could not provide specific information. It is truly a mystery that an estimated 3-6 tons of plaster molds could simply vanish!"
       * "Sculpted elements include the left femur and tibia." **_GOLD DUST!_**
