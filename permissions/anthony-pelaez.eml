@@ -1,0 +1,373 @@
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:a05:6124:1ef:b0:2fe:738d:a289 with SMTP id q15csp722457vlo;
+        Fri, 19 Aug 2022 07:33:41 -0700 (PDT)
+X-Google-Smtp-Source: AA6agR6XhyrXScqFbNKXXEMe0Mmt4NmdAa1fF8Djo1hsK9OEW8ZduZTlcYk9qlYnr5SASqalXXUR
+X-Received: by 2002:a17:90a:39c9:b0:1fa:c50d:11f4 with SMTP id k9-20020a17090a39c900b001fac50d11f4mr8753731pjf.166.1660919621676;
+        Fri, 19 Aug 2022 07:33:41 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1660919621; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=npXPJrHPS9FM1Dtagxspif8ujvsMncB7wj1U1ombwTkJJUcJGVmM8LWSReEqnpqsIj
+         FW8KzcKuhvYHHF6n5yG3YyREw+T8PLwnz6dxHrpSGIFL99gqVcc2rV8holQ8bKoQlCdb
+         /d+GghumXfeyg8JwLSGVBlLAwDloCa9amODSgGJnuOoC2epeY1+hbXFyes6dz99HntIj
+         jZQWq3JnondC+75yEqj9cRO+ebewHXvCWHejTdJ9TFSIUrSFsq/KWVS7RjnJkqqGjtow
+         6CSwh2FbpDFjGhsTbh3ClDmUFZnH6x6sZgPHpJufXL26hvRbwUyEhvcWt83v97ky+27G
+         IPGA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:in-reply-to
+         :references:message-id:date:thread-index:thread-topic:subject:to
+         :from:dkim-signature;
+        bh=qenxjZw/D0TpO/XRjM7+7wUJ0g0XFSlrAYOz4jsJzy0=;
+        b=ZfL/cBv0/p1bqNZqmEOxANSdGBadoXSEKv+v3AQlkKNzJurAG2o00QhntHM4BFpWrZ
+         J0YUMwpfCs2x2hHdeEU7tNUet+v56mBXrWTZ4+TZHMS1pO1NgMdB5RDiRX+M88+jaMiR
+         7FEj5E+n5gFJhWMXCxY5UJRP0Ua7yLIfk+yfM1gr+MxLpk9GPi9oxamSlU6FZvrm4XqM
+         I8lJs9F+HASk6n3PdrdENYyiM0W76oebSEvRapvlr5amQoly4J1scv6Lg1S7ckjLkU/t
+         wSZOmX+fxTlkaagaH2MkgOfn4/hPDFm3GTpa7nLaOlqXFSIOHU1otpGVwheTidY3phQT
+         j5GA==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@MuseumScienceIndustry.onmicrosoft.com header.s=selector2-MuseumScienceIndustry-onmicrosoft-com header.b=v3ECV5zc;
+       arc=pass (i=1 spf=pass spfdomain=mosi.org dkim=pass dkdomain=mosi.org dmarc=pass fromdomain=mosi.org);
+       spf=pass (google.com: domain of anthonyp@mosi.org designates 40.107.243.110 as permitted sender) smtp.mailfrom=anthonyp@mosi.org
+Return-Path: <anthonyp@mosi.org>
+Received: from NAM12-DM6-obe.outbound.protection.outlook.com (mail-dm6nam12on2110.outbound.protection.outlook.com. [40.107.243.110])
+        by mx.google.com with ESMTPS id d4-20020a056a0010c400b0052d7483e126si4666794pfu.292.2022.08.19.07.33.41
+        for <sauropoda@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 19 Aug 2022 07:33:41 -0700 (PDT)
+Received-SPF: pass (google.com: domain of anthonyp@mosi.org designates 40.107.243.110 as permitted sender) client-ip=40.107.243.110;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@MuseumScienceIndustry.onmicrosoft.com header.s=selector2-MuseumScienceIndustry-onmicrosoft-com header.b=v3ECV5zc;
+       arc=pass (i=1 spf=pass spfdomain=mosi.org dkim=pass dkdomain=mosi.org dmarc=pass fromdomain=mosi.org);
+       spf=pass (google.com: domain of anthonyp@mosi.org designates 40.107.243.110 as permitted sender) smtp.mailfrom=anthonyp@mosi.org
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=V4ES1xFzNQDSznEJGI1w1EzsNNfyvZwE6zuiHAuXe/RrgWNhbVufa59nOOlppgsMxs4wpBYLS/5RycpO7bMnvqLc7+PIkGZqHG7PnPkqalMsqMaqARUSHq8T434VqPd7LyErpHVBE/ia3nAzIhNsMZaFduADoVJcSYbVAsQxZay7XkLgI5qvHP6Rf/9UfoKiv/8vDJS2rnPFWd8O3YTMs+E8yQVNWb35hRlYWcbCDo8JOjwVzA/s0UXRaBZntWRRwql8QnAJ8tKbwMUMgvZpeFAaP4987wMlAIrrWk5AAzqeaSjKBboCpFrFEa9DJHLQwa7jz8ppHAXaJyxAf1HlaA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=qenxjZw/D0TpO/XRjM7+7wUJ0g0XFSlrAYOz4jsJzy0=;
+ b=IegnpYFEQSYXNoQOWc+ilV8PcumsfIbxEdnzyI5AoFi35SND3RqeR817QgP8FEshPPfkPE8EHv+PI95HmoKK6fP6o6/7mxerNk+5J7Kt2qv80n2qcZ06cH4OB62vtAkezwc2YbOegBfRhG9Pr0ljstOE4iWjTF6IFjCbv4rr8zMfkUibtwsI67TPkkrZMea94u+zyioSPMeKZ215kTtggkS9mfYbOffJs5Iks0fJm83+WPVg4OyQcZucIzpdu/kb2xSwgLZl9SZ+Ul7YReisrvDc0sKCrrOqHTMlviQShlFmjwRaTgZc1JL2/NNjuj0j81YFddetEKw2X1twfn7Tvw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=mosi.org; dmarc=pass action=none header.from=mosi.org;
+ dkim=pass header.d=mosi.org; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=MuseumScienceIndustry.onmicrosoft.com;
+ s=selector2-MuseumScienceIndustry-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=qenxjZw/D0TpO/XRjM7+7wUJ0g0XFSlrAYOz4jsJzy0=;
+ b=v3ECV5zcXiaSAT+kmCelXiPCjb9JnmUl7T4jEmd1sn8PUFtSA2IeqaE00qiImiwihfwHq0ni7o1AQIj2A6KQwiT1llWna7ngfnRHb6WWtPLXvITkNulV1HYM36oi3EyoiCY1D3Nu8SZY5lWSIIZaybr0MhuLE/TrltgulHQzK6c=
+Received: from CO1PR01MB6759.prod.exchangelabs.com (2603:10b6:303:f5::9) by
+ DM6PR01MB4475.prod.exchangelabs.com (2603:10b6:5:78::22) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.5504.19; Fri, 19 Aug 2022 14:33:38 +0000
+Received: from CO1PR01MB6759.prod.exchangelabs.com
+ ([fe80::b8c6:28cc:d57e:482a]) by CO1PR01MB6759.prod.exchangelabs.com
+ ([fe80::b8c6:28cc:d57e:482a%5]) with mapi id 15.20.5546.016; Fri, 19 Aug 2022
+ 14:33:38 +0000
+From: Anthony Pelaez <anthonyp@mosi.org>
+To: Mike Taylor <sauropoda@gmail.com>
+Subject: RE: MOSI Diplodocus casts
+Thread-Topic: MOSI Diplodocus casts
+Thread-Index:
+ AQHYl1RiPvRGNn/gjEeJeYor/e2aMK1+frqHgDJDhYCAARmMEIAAOoiAgALzIeCAAA3RAIAAI8dwgAAhDYCAASYQwA==
+Date: Fri, 19 Aug 2022 14:33:37 +0000
+Message-ID:
+ <CO1PR01MB6759E430D09339354A1989A5AD6C9@CO1PR01MB6759.prod.exchangelabs.com>
+References:
+ <CACnMvBakbH08U2JpxDxdmK+7tubXFDoZZKewFXx-VyC6XMZVLA@mail.gmail.com>
+ <1E19AAD8-866B-49EB-8AE0-64036A390AD8@mosi.org>
+ <CACnMvBY_89Ybq_3294ird1C1CR+R6_kF8UvRvCTOq8t7+9KFXQ@mail.gmail.com>
+ <CO1PR01MB67595DBCE1970D1A94CA208CAD6B9@CO1PR01MB6759.prod.exchangelabs.com>
+ <CACnMvBbKWzRjN1yQujPhO-SwRcFjuG7vie+7EUw2qAYSw2oK8Q@mail.gmail.com>
+ <CO1PR01MB6759C82F395D2666B092CEFEAD6D9@CO1PR01MB6759.prod.exchangelabs.com>
+ <CACnMvBaM7a7qfwEH=xbXz0zD0hC1Kyu6TK_dKno8ZOKKQzXPyw@mail.gmail.com>
+ <CO1PR01MB6759B41F171D4FD7C232E0FCAD6D9@CO1PR01MB6759.prod.exchangelabs.com>
+ <CACnMvBZVFB-ACR9_6VOcO1dvU-DdH-7RmvHcTWgWA2SeejDDig@mail.gmail.com>
+In-Reply-To:
+ <CACnMvBZVFB-ACR9_6VOcO1dvU-DdH-7RmvHcTWgWA2SeejDDig@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=mosi.org;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 6b3a7035-3f10-4559-08c9-08da81efce08
+x-ms-traffictypediagnostic: DM6PR01MB4475:EE_
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ B6a7g7aQwPdLyy4HoHzirs5Jwc43rgPbX99uXd46SY6ZnjXgMrbQ01Jh5cyvYhi+eCpDaVspu/SNDA0jtMvDgP7VqVcyAybngow5t040waFw5zmQIfwrbIw1hvoDlt3l2DMy/mLp9EwqzgoD3+g1zMXSEhMUDNLmNm01GFN/7Rb7MPzfQ3UvAgqccn3PaxebqVy2rmsETyRx6aJbxoWbks0TNn+J7ThwRJvUMXmI6UhOYqcvm9g/PlhAC1PrpV/XIg0fICffzhwJl2mM3ClXwLQvJvH8bb2F5LdVKXIadxYJ8GwTNWWNhBBYHcBzXaVpY8lbLe3J/C3h433hDjPW/1UhlyAlceW72BpskfTKg48MGIBmC4w6VBQbfsyPoLXep4X0fGS5P8i5ZFm5jH4dIQQxxLKzHYRqhx1uH7dbT+dImeokvFGPvVg9gzS13FnlzgZnXD1j2YvtG5w4K/yIPaUa9aeVGcvq1rSKfCVvfxD/Pmf+N9u7uKNN/4BMPikis+sR+3m0Il6dK+Af8ho5mR950W9wBJHnifg6yu7FRP4pH2udjMY86jfgmsTVj13BH5Pf2P0yreC6qHOCNo/ABHEEMdZJx7vKUD6GLgisN2mV4X/z9BCF+L6HbesRfFHG7b+mF+8Nq0dcyHf4Ke/sauA9wRiRCiQVV+vNUkjyfnT1ENuziOiIbl6ZvEgWZRRlS6oAMMgmc5LRzYxNgMIRmccKuTqckL+OvS1Ztug65lET2Mc/4METZH8H8nxx/1UF+ekEuuAFqtYePzOAbfQEPYbf/2xS/sp2a7NDihOnp2w=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:CO1PR01MB6759.prod.exchangelabs.com;PTR:;CAT:NONE;SFS:(13230016)(376002)(346002)(136003)(39830400003)(396003)(366004)(76116006)(21615005)(53546011)(7696005)(66946007)(41300700001)(6506007)(6916009)(966005)(478600001)(86362001)(316002)(8676002)(122000001)(71200400001)(38100700002)(3480700007)(186003)(9686003)(83380400001)(26005)(7116003)(5660300002)(40140700001)(52536014)(55016003)(66446008)(8936002)(38070700005)(166002)(66556008)(2906002)(64756008)(66476007)(33656002);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?utf-8?B?Z0FZaTZiSFVNL0J4T0ZtSGh1Q1RlSG9xMHNKUTlOczFUdGMvL2dsV0UzOUc1?=
+ =?utf-8?B?Mm1EMExHZXd3TjN5NmVLaExtTm92M1NxSkhBemFBendzOFgrSXZWd1RmWUQ4?=
+ =?utf-8?B?UDhqZkFva280NktxZ2FsNSttNGhHUmNZeXIweFRMZDBuRStZaFFqS3U0bmpS?=
+ =?utf-8?B?dm5Wbm5xbzZTb1lYRXdiNG5IYVQyczRqajNGTTBFYnY1MUR0L2hKVWFFOURB?=
+ =?utf-8?B?NDhYbU9Mazc0TjBzbTQza0VJODdrUExyVE4yV1IwTm1BZWZ3OUJqTVYrbTdM?=
+ =?utf-8?B?T2dTWll1NmdTR0k1UTQ5dXhLV29SdUdjSUpMRFJRVVdGTlNEejgxVTJmQ0Mr?=
+ =?utf-8?B?WHVhOVhWMk9OZmU4ZzJZaHo1TmtkUjVKdnY4Vlg0d2pMelF1d1JBZzBFQnVr?=
+ =?utf-8?B?VFpTSGliMlNhbFozV0NPbW0rWU9LbW1rek8vc3o3bjd4dzBEcTdRaHZ3UFRM?=
+ =?utf-8?B?SFIwZzR0dnh1WEtMOVowQ3g2MXY4ZVNjZGFtdHFxS3JCaDg2bUcwKzQ1eUNS?=
+ =?utf-8?B?dHZjamh1Y1ZsckZRRzNVR1FFNlVBOTh5Zmp3N3c4MkxkekZKZHAwa2FEdmpn?=
+ =?utf-8?B?Q0Jxc3BOZWZZVjI2aXNsR1ZuZGJJdHovZVhqZzArNGFYcmdNZjVCdHYyMkw3?=
+ =?utf-8?B?WmQrcnBuczBQait0d1plU3RsV2VienRqc3cvM0l4RG1BODRvQ2JZZzNvQml0?=
+ =?utf-8?B?aFZESm9jcnNBZVE4WlpBZ1U1OXZlUVdxc2FpSEZvbUZ6c0RyVTVGMy81MFlk?=
+ =?utf-8?B?dkFwWWVIYXhqZjRCdUdZcEFBbE81dTlpTmZCOTBMK25xQ2NvUzJBSWNvck8w?=
+ =?utf-8?B?Z2NSUEhUSG15ckJ1Z1JkanFXT2tiT3pCZUkyMHcrN3BWRzVJa1JIeFM4TWph?=
+ =?utf-8?B?MjYwTzZ2Q211VEdiM2FZZ2tpY2JTMUdRRXN4SHUvdWNma0lIMER0eW1GSC80?=
+ =?utf-8?B?OEtaTGIxcWhvRHRBUW03akpzYW43dTZRaWkxSjROSkxvNFA5NGptREVMYk85?=
+ =?utf-8?B?YytOUFZjUUxkNS92RHlMNE1oVFBqcUVhVnZYMnBLcUpGSUplOXVhbHM4cXQ3?=
+ =?utf-8?B?Y2lXQXdYWVc4RTdWcmlXWEw0OWZMYzZuUmlhUVNyWTg3dDA0Wm1hWlc4d2Rt?=
+ =?utf-8?B?Q1NFVnZlUHhBSzdpem5LRDNoaFBDc2k3cWxxV0N3Tncwc2thdGlSRVVpZklC?=
+ =?utf-8?B?QlVyMjVvaGx0dHBtYjVBVG5hTkFGZ2FaTmRlREdVNHpEYkZPOXFnR3dMY2Ni?=
+ =?utf-8?B?K0hwM0dtRFJkN3NaeEJvRExGeXVzck94VWhMTk8zcW9Ra3NQZ1NpaytMSHpm?=
+ =?utf-8?B?cnNDSGhoOUJRVURuSFVlM2pLNEhSQjdMWS91SnFacE5RbnBHMnVCYnk3OEJj?=
+ =?utf-8?B?ZTZvQ0JBVlNscGhSeGtiVk1uT1EramNqcDVwMUxhQVF2aFo3MFUzeW1xTGMw?=
+ =?utf-8?B?bmpKNVRneE5DMDRrRGdpR0xhazBXbzlaSVQzODFOUkNrYlJkKzBHbzhSTldv?=
+ =?utf-8?B?TVZHaC9YOUVOWmFEd2R2MkpiMHowM280RmJLNmIvRFIvOWVsQXlNRGQvOGVi?=
+ =?utf-8?B?SFM0L1dQMEp0bytxdWlyVVVBMmpFL0UzTXdjOUJvTnhkQzFZNitTSUxodzhV?=
+ =?utf-8?B?WmhjU29wYVFYOUozTm44RTh4SGZIaWhlSlVKUGVsMXFVZEx5OUcyN0VzeGpI?=
+ =?utf-8?B?TmNvWVlsS0RkSnRZOUhabmhLUUFYdHNjL01VUmJ1RHJ2Nm90d0FiRENmdC9S?=
+ =?utf-8?B?UW1UMG9ZRFBoYWw2c1orYy83cHlpNXFiYXhqcWYrZkh6SVNaTkNXVGs0NGxJ?=
+ =?utf-8?B?dlIzWWdDNWVVdUs1QUp6Y2swZzVkOFhLZGlGVnk1N1VVMitWbG5jazhDWmVX?=
+ =?utf-8?B?VHg2VlJSUE90MjFSdStSVXpFT25zMjBXV1h6aDI1MXRMNmVtMS9DS2ZMV3ll?=
+ =?utf-8?B?WVJaQytrR3RmbVJrdU5HLzJKRXZMTld2ZlFROTVwVnBFbTJzdUV4aWQ3a05X?=
+ =?utf-8?B?SGRzM05zVlgreXFzU1dMSFVhUkxYTnJYcUVHZGcvMEtUV1V4SVVucnJVQlA2?=
+ =?utf-8?B?cG55RzBZU3dGR2wzMi9Sa1FsWE42RGd2RzRDK3MxY1FGaUg2WDk3eEN6bjhE?=
+ =?utf-8?Q?iw0pcO2LrqPOgEIcYIBmjfMDa?=
+MIME-Version: 1.0
+X-OriginatorOrg: MOSI.ORG
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: CO1PR01MB6759.prod.exchangelabs.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6b3a7035-3f10-4559-08c9-08da81efce08
+X-MS-Exchange-CrossTenant-originalarrivaltime: 19 Aug 2022 14:33:37.9520
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: cef2e331-0a51-4912-ac3d-1b9ac211af2a
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: hnBRfF0P3HVXmtS0ZNEod1xc7gqrOfQc5n/4p2vQJmOERjYaMlskFoQSghrrF85pD+OH1b/vf2Stj0JCHii0PA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR01MB4475
+X-StripMime: Non-text section removed by stripmime
+Content-Type: text/plain; charset="utf-8"
+
+Hi Mike-
+I am glad the Mesozoic mystery was solved!
+It is ok to use the information. I also took the photos myself.
+
+Thanks,
+Anthony
+
+
+Anthony Pelaez
+Senior Director of Exhibits
+Museum of Science & Industry
+Tampa, FL
+Mobile: 813-390-3121
+
+
+
+From: Mike Taylor <sauropoda@gmail.com>
+Sent: Thursday, August 18, 2022 4:59 PM
+To: Anthony Pelaez <anthonyp@mosi.org>
+Subject: Re: MOSI Diplodocus casts
+
+Thanks for permission to use the photos. Just to dot the i's and cross the t's, is it also OK to cite information you have given me in this thread. (I know it, is, but I need you to say it so I can show it to journal editors!)
+
+Did you take these photos yourself?
+
+Regarding whether it was Dinolab or RCI who did the mount, I returned to a manuscript section that I wrote only a couple of months ago based on Letasi's comments, and which I had evidently managed to forget!
+
+The elements of the mounts were cast by Jim Madsen of Dinolab, using hollow core resin casting with lightweight foam filler to reduce weight. While the postcranial skeleton was created from the second-generation Vernal molds, the cast skull was based on a separate Carnegie Museum individual, CM 11161. All these elements were then shipped to Ontario to be assembled into their selected postures by Peter May of Research Casting International (RCI) with guidance from Letasi.
+So that mystery is cleared up!
+
+Unfortunately the McCollum interview is riddled with errors:
+* Carnegie never found anything, he paid others to pay yet others to find fossils!
+* Diplodocus carnegii was found at Sheep Creek, Wyoming; not in Vernal
+* Carnegie had 10 copies of his skeleton made
+* The Diplodocus in Frankfurt is not a Carnegie cast, but a partial real skeleton of a smaller individual donated by the AMNH.
+* The MOSI skeletons were not cast from the molds created by the Carnegie Museum, but by molds created from Dinolab from a concrete cast in Vernal that had been made from the original molds (as an eleventh and almost certainly last cast from those originals).
+
+Still, no harm done, and I think all remaining issues resolved.
+
+-- Mike.
+
+
+
+On Thu, Aug 18, 2022 at 8:19 PM Anthony Pelaez <anthonyp@mosi.org<mailto:anthonyp@mosi.org>> wrote:
+Hi Mike-
+I am glad to help out. Yes, you have permission to include any of the photos I sent you for your paper.
+Yes, the video was recorded on VHS, so the quality is not great. Sorry.
+
+The narrator of the video is Dave Letasi. In the video, he mentions RCI and that they are in RCI‚Äôs building.
+
+I found an interview from 1998 with an artist working at MOSI. If you go to pages 18 & 19, you‚Äôll see that the original fossils were found in Vernal, Utah, but RCI made our diplodocus skeletons with the Carnegie casts.
+
+I hope this clears the discrepancy.
+
+Let me know if you need anything else.
+
+Thanks,
+Anthony
+
+
+Anthony Pelaez
+Senior Director of Exhibits
+Museum of Science & Industry
+Tampa, FL
+Mobile: 813-390-3121
+
+
+
+From: Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>>
+Sent: Thursday, August 18, 2022 12:53 PM
+To: Anthony Pelaez <anthonyp@mosi.org<mailto:anthonyp@mosi.org>>
+Subject: Re: MOSI Diplodocus casts
+
+Wow, Anthony, this is amazing, thank you!
+
+May I please have permission to use one or both of the photos in a published paper? I will of course acknowledge you for sending them to me; who should I acknowledge for taking them?
+
+I just skimmed through the video. Shame about the quality, but there's evidently going to be a lot of fascinating stuff in there. Great that you were able to dig this out, I really appreciate it.
+
+You say "The diplodocus standing on all four legs was sold to RCI, the company that we purchased them originally" -- but I have a pretty detailed account from David Letasi about how the skeletons were created by Dinolab in Utah. Do you have any idea why we have this discrepancy?
+
+Thanks again!
+
+-- Mike.
+
+
+
+On Thu, Aug 18, 2022 at 5:10 PM Anthony Pelaez <anthonyp@mosi.org<mailto:anthonyp@mosi.org>> wrote:
+Hi Mike-
+I sent you a copy of a video of the construction of the diplodocus in the main lobby.
+Here are some more photos.
+
+The diplodocus standing on all four legs was sold to RCI, the company that we purchased them originally.
+https://www.rescast.com/
+
+Please let me know how else I can help.
+
+Thanks,
+Anthony
+
+
+Anthony Pelaez
+Senior Director of Exhibits
+Museum of Science & Industry
+Tampa, FL
+Mobile: 813-390-3121
+
+
+
+
+From: Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>>
+Sent: Tuesday, August 1WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+WARNING: bad base64 char -1 (ˇ)
+6, 2022 3:01 PM
+To: Anthony Pelaez <anthonyp@mosi.org<mailto:anthonyp@mosi.org>>
+Subject: Re: MOSI Diplodocus casts
+
+Thanks for these photos! It's nice to see the surviving Diplodocus in its new home. But what I'm really looking for is photos of the display with with both Diplodocuses in their old building. Do you have those, too?
+
+Also: in your initial reply you wrote "Basically, we kept the one that was ‚Äústanding‚Äù on its hind legs and we sold the other to a company that in turn sold it to a Canadian exhibition company. I‚Äôm sorry for being so vague, but I promise to provide all the details you can muster:)" Do you have the details?
+
+Thanks again,
+
+-- Mike.
+
+
+
+On Tue, Aug 16, 2022 at 4:33 PM Anthony Pelaez <anthonyp@mosi.org<mailto:anthonyp@mosi.org>> wrote:
+Hi Mike-
+Sorry for the delay.
+I attached a couple photos of our diplodocus. I am more than happy to send you better photos or video.
+
+Thanks,
+Anthony
+
+
+Anthony Pelaez
+Senior Director of Exhibits
+Museum of Science & Industry
+Tampa, FL
+Mobile: 813-390-3121
+
+
+
+From: Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>>
+Sent: Monday, August 15, 2022 6:44 PM
+To: Anthony Pelaez <anthonyp@mosi.org<mailto:anthonyp@mosi.org>>
+Subject: Re: MOSI Diplodocus casts
+
+Hi, Anthony. I hope your holiday in Thailand was restful, and the food was as spectacular as I imagine it to have been.
+
+I wonder if you have time now to dig out some of the MOSI Diplodocus information and images I was asking about?
+
+Many thanks!
+
+-- Mike.
+
+
+On Fri, Jul 15, 2022 at 12:09 AM Anthony Pelaez <anthonyp@mosi.org<mailto:anthonyp@mosi.org>> wrote:
+Hi Michael-
+It‚Äôs great hearing from you.
+I am currently on holiday in Thailand until the first week in August. I can send you detailed information plus photos/videos of both Diplodocus skeletons.
+Basically, we kept the one that was ‚Äústanding‚Äù on its hind legs and we sold the other to a company that in turn sold it to a Canadian exhibition company. I‚Äôm sorry for being so vague, but I promise to provide all the details you can muster:)
+
+Cheers,
+Anthony
+
+Anthony Pelaez
+Senior Director of Exhibits
+Museum of Science & Industry
+Tampa, FL
+Mobile: 813-390-3121
+
+Sent from my iPhone
+
+On 14 Jul 2022, at 14:36, Mike Taylor <sauropoda@gmail.com<mailto:sauropoda@gmail.com>> wrote:
+Ôªø
+Dear Anthony Pelaez,
+
+I am currently working on an account of cast skeletons of Diplodocus that were made from molds that were made from a cast in Vernal, Utah, that was made from the original molds! (Yes, it's confusing.) I have been corresponding with David Letasi about the process of building the two Diplodocus mounts that you used to have at the old building. I would like my account to include a summary of what has happened to the skeletons since they were mounted, but David retired some time ago and doesn't have that information.
+
+Am I right in thinking that one of the two (the rearing one) has been moved to the new building, but that the other is still in the lobby of the old building? What is that building now used for?
+
+Also, I am looking for a decent-quality photograph of the old exhibit with the two Diplodocus individuals. There are a couple of low-resolution photos at
+https://mositampa.blogspot.com/2009/08/diplodocus-in-grand-lobby.html
+but in general images are hard to come by. Does the museum have any?
+
+Many thanks,
+
+Dr. Michael P. Taylor
+Department of Earth Sciences
+University of Bristol
+Bristol BS8 1RJ
+ENGLAND
+dino@miketaylor.org.uk<mailto:dino@miketaylor.org.uk>
+svpow.com<http://svpow.com>
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
+Please note: All correspondence to or from this office is subject to Florida‚Äôs Public Records law.
