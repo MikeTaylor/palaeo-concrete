@@ -1,0 +1,777 @@
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:abe:8488:0:b0:30d:e92d:be53 with SMTP id g130csp635885vld;
+        Tue, 23 Aug 2022 04:27:39 -0700 (PDT)
+X-Google-Smtp-Source: AA6agR4THfoLQ+KBKnPUHuAZ5POpOu59jMLDnAJjlNWmQlnD8W4xI1ulF/PhWNNS7/zIWMRHVy+G
+X-Received: by 2002:a17:902:ef96:b0:172:abb9:657e with SMTP id iz22-20020a170902ef9600b00172abb9657emr23899016plb.48.1661254059528;
+        Tue, 23 Aug 2022 04:27:39 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1661254059; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=gPa1lpI228TDAdADi2/y6hCeqZlIPGjaoezhAP+TgT3rbbykMG92Ga1rKCzZEURKpp
+         sggO3fuAVBFXpK8HpzVFa88H8chexU5/NdQ9ulAlbyh9Wo9VHkgDZtXrmO3quyaUAEp4
+         PopXKxW1eUJ76kk6bItw4/4Yb+8kknRdLc8nYUcEn6mPdSownOu9JfEt4K3FPmo5thoC
+         m1J4nFq9NYu5vQ1p+I69MJ2uXaaFa6Lb0RqVA1G4QuYVHq+J/UBOoL59xl55TxrAIrTt
+         A6sEv7+zht27YFqTHb6J8OmVYDbhhytoxOeiPUnlIlKxrgH/SGkW2r8CKIjSo0+tU2//
+         226Q==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=user-agent:importance:mime-version:subject:references:in-reply-to
+         :message-id:to:from:date:dkim-signature;
+        bh=XJ+TKp6qHMpTQzRTLq4BSd+88vUBlsHp2W/f2MwePCc=;
+        b=kYgfRIXT+L36TB62NQAlQfn7n13T4kCPEEH3WTAIKk3lUDXV/yjyaMLkB25wVKPbPo
+         l0XCOW1DEzIVw6Y3yVToQ4zFnzVD5mOiE2ZpcRs5p0952ORbk1FmDD+ZD5t5CsfAZ8Z4
+         0UT7AvWT90e83EgsiMvQOEW7F9IxLBlESV9nsWwes2i/RlwrXqlhkTJKCLYIf5aaLEIR
+         PoyiihCBhfrRTmZUua6SPYLqMRx+TFoFGsD6OKKm4Vj+PWUN5DIuj/ewof5/4tzZWk6h
+         1pW1NJwW0xrghNQ60DTgaX7cnandNjxfHhz/JZxoaUTj76odhO0RKvI5w/x5u0zduOta
+         QByQ==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@rescast.com header.s=trmor555 header.b=csafWmHN;
+       arc=pass (i=1 spf=pass spfdomain=rescast.com dkim=pass dkdomain=rescast.com dmarc=pass fromdomain=rescast.com>);
+       spf=pass (google.com: domain of pmay@rescast.com designates 136.143.188.12 as permitted sender) smtp.mailfrom=pmay@rescast.com
+Return-Path: <pmay@rescast.com>
+Received: from sender4-op-o12.zoho.com (sender4-op-o12.zoho.com. [136.143.188.12])
+        by mx.google.com with ESMTPS id q1-20020a170902eb8100b0016d8a0cd540si3172164plg.510.2022.08.23.04.27.39
+        for <sauropoda@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 23 Aug 2022 04:27:39 -0700 (PDT)
+Received-SPF: pass (google.com: domain of pmay@rescast.com designates 136.143.188.12 as permitted sender) client-ip=136.143.188.12;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@rescast.com header.s=trmor555 header.b=csafWmHN;
+       arc=pass (i=1 spf=pass spfdomain=rescast.com dkim=pass dkdomain=rescast.com dmarc=pass fromdomain=rescast.com>);
+       spf=pass (google.com: domain of pmay@rescast.com designates 136.143.188.12 as permitted sender) smtp.mailfrom=pmay@rescast.com
+ARC-Seal: i=1; a=rsa-sha256; t=1661254057; cv=none; 
+	d=zohomail.com; s=zohoarc; 
+	b=TMKSpJXlwLAKQUKZWqmkryEJPO/o8hs8OSVGESXLBndsBMpIVBrX6yOER3GYIZoz6F+M0pZYdYzcDClLqGrCewN+sSghrjeKA3PvbIeVmvn/kThkFgpodDB6B2gQ3eU2wIE2e0nqPq7TofTeMmSfzrBHafQrIQLBRNiPvxjiOcc=
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=zohomail.com; s=zohoarc; 
+	t=1661254057; h=Content-Type:Date:From:In-Reply-To:MIME-Version:Message-ID:References:Subject:To; 
+	bh=XJ+TKp6qHMpTQzRTLq4BSd+88vUBlsHp2W/f2MwePCc=; 
+	b=HDZPdg3QOahvQPoe062osNxe18byet8bjQKLMjUE+N3zD/I/D7u3TEGzSbfbX9Rl+OsUTlataLCKbiqgOnrRLNaP5n8kenYTM4H9GDanEtVG27raMC7C36YISNrAkzgjEpR8D9ZO1SoIcMNm6JbLsgguqtaxXn1GySHfz6vmZoc=
+ARC-Authentication-Results: i=1; mx.zohomail.com;
+	dkim=pass  header.i=rescast.com;
+	spf=pass  smtp.mailfrom=pmay@rescast.com;
+	dmarc=pass header.from=<pmay@rescast.com>
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1661254056;
+	s=trmor555; d=rescast.com; i=pmay@rescast.com;
+	h=Date:Date:From:From:To:To:Message-Id:Message-Id:In-Reply-To:References:Subject:Subject:MIME-Version:Content-Type:Reply-To:Cc;
+	bh=XJ+TKp6qHMpTQzRTLq4BSd+88vUBlsHp2W/f2MwePCc=;
+	b=csafWmHNjME19AQfWV3naHEgoOLeW7ltqUv1PYySj2hQXa5lvlHAH/Fi9mVdp79u
+	zeKIRFTZGKjo2x6usvbmZ5iHRFQoYLnSHbAX6WHfu7pzYsqRvZipxEF6VJk0jcJK8WI
+	GthRC1VqO/T4IDq026R/rE7LRMvqTSpZUxv3KlH1jqpt8sn6jLRZOe6jY843S2tO17f
+	JHtd2mrvOSVpU09PB/kpFO/D08ifAMwXru/s9SEmsfEFokLo6uk7gG1J/HkPwO+Vgqm
+	T1ztOB0HOchAu9uVOiVbqqn6iB1cQJdeI7J6+cL4ndHWkXcSjyXxboh5o4MwHrM7LId
+	hGL1deWmvQ==
+Received: from mail.zoho.com by mx.zohomail.com
+	with SMTP id 1661254054966988.6867272659443; Tue, 23 Aug 2022 04:27:34 -0700 (PDT)
+Date: Tue, 23 Aug 2022 07:27:34 -0400
+From: Peter May <pmay@rescast.com>
+To: <sauropoda@gmail.com>
+Message-Id: <182ca75341b.11a1a57b2453751.7647308108465395812@rescast.com>
+In-Reply-To: <CACnMvBbPfBMiRQGSeJ25R-sYWjaWHv_Evjw20B-9mzMuHFvKuw@mail.gmail.com>
+References: <CACnMvBbJYQ0HVJDjYjLAjb0_qZ1tGHUWSPOP5JDEfumMiGeAYw@mail.gmail.com>
+ <CACnMvBYhRdyDL9nJz=KPk2AQ3pdiHRncZyUg3-gTwvgD_idsiw@mail.gmail.com>
+ <182ca6a5f04.b935980c451965.8069289816727193003@rescast.com> <CACnMvBYhL3ZXCvdAx2=9s5gQhoJfpTDyMj+0TMa15MbfgkB4FA@mail.gmail.com> <CACnMvBbPfBMiRQGSeJ25R-sYWjaWHv_Evjw20B-9mzMuHFvKuw@mail.gmail.com>
+Subject: Re: Diploocus casts at MOSI, Tampa
+MIME-Version: 1.0
+Importance: Normal
+User-Agent: Zoho Mail
+X-Mailer: Zoho Mail
+X-StripMime: Non-text section removed by stripmime
+Content-Type: text/plain; charset="UTF-8"
+
+Sure.Peter    
+        
+            
+                
+                    
+                        
+                            
+                                
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                        
+                                                    
+                                                    
+                                                
+                                            
+                                            
+                                                
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                
+                                
+                                    
+                                
+                                
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                        
+                                                            
+                                                                
+                                                                    
+                                                                        
+                                                                            
+                                                                                
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                        Peter May
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                        Founder/President
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                        
+                                                                    
+                                                                
+                                                            
+                                                        
+                                                    
+                                                
+                                            
+                                            
+                                                
+                                                    
+                                                        
+                                                            
+                                                                
+                                                                    
+                                                                        
+                                                                            
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                        
+                                                                    
+                                                                
+                                                            
+                                                        
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                        
+                    
+                
+            
+            
+                
+                    
+                        
+                            
+                                
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                        
+                                                            
+                                                                
+                                                                    
+                                                                        
+                                                                            
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                    Office.
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                            +1 613-394-7007 
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                    Email.
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                            pmay@rescast.com 
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                    Website.
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                            www.rescast.com 
+                                                                                        
+                                                                                        
+                                                                                    
+                                                                                
+                                                                            
+                                                                        
+                                                                    
+                                                                
+                                                            
+                                                        
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                        
+                    
+                
+            
+            
+                
+                    
+                        
+                            
+                                
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                        
+                                                            
+                                                                
+                                                                    
+                                                                        
+                                                                            
+                                                                                
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                                Address.
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                        
+                                                                                    
+                                                                                     
+                                                                                    
+                                                                                        
+                                                                                            
+                                                                                                15 Dufferin Ave. Trenton, Ontario K8V 5C8 
+                                                                                            
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                            
+                                                                        
+                                                                    
+                                                                
+                                                            
+                                                        
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                        
+                    
+                
+            
+        
+    
+ ---- On Tue, 23 Aug 2022 07:25:11 -0400  sauropoda@gmail.com  wrote ----Would it be OK to cite this as a pers. comm. in a paper that is not the one we're co-authoring?-- Mike.On Tue, Aug 23, 2022 at 12:24 PM Mike Taylor <sauropoda@gmail.com> wrote:Thanks, Peter, that's really helpful.-- Mike.On Tue, Aug 23, 2022 at 12:15 PM Peter May <pmay@rescast.com> wrote:Hi Mike,Yes, we mounted to Diplodocus skeletons for Tampa Bay cast by Dinolab. The science center downsized and sold off one the skeletons at auction. We received a call one down from the person who had bought the skeleton wondering if we were interested in buying it back. We bought it, I'm hoping to put it on exhibit at the Quinte Museum of Natural History a small local museum just being developed.Presently it is on exhibit at the Cleveland Museum of Natural History as a filler while we mount their Haplocanthosaur skeleton.Cheers,Peter    
+        
+            
+                
+                    
+                        
+                            
+                                
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                        
+                                                    
+                                                    
+                                                
+                                            
+                                            
+                                                
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                
+                                
+                                    
+                                
+                                
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                        
+                                                            
+                                                                
+                                                                    
+                                                                        
+                                                                            
+                                                                                
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                        Peter May
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                        Founder/President
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                        
+                                                                    
+                                                                
+                                                            
+                                                        
+                                                    
+                                                
+                                            
+                                            
+                                                
+                                                    
+                                                        
+                                                            
+                                                                
+                                                                    
+                                                                        
+                                                                            
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                            
+                                                                                
+                                                                                    
+                                                                                
+                                                                            
+                                                                        
+                                                                    
+                                                                
+                                                            
+                                                        
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                        
+                    
+                
+            
+            
+                
+                    
+                        
+                            
+                                
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                        
+                                                            
+                                                                
+                                                                    
+                                                                        
+                                                                            
+                                                                                
+                                                                                    
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                    Office.
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                            +1 613-394-7007 
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                    Email.
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                            pmay@rescast.com 
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                    Website.
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                         
+                                                                                        
+                                                                                            www.rescast.com 
+                                                                                        
+                                                                                        
+                                                                                    
+                                                                                
+                                                                            
+                                                                        
+                                                                    
+                                                                
+                                                            
+                                                        
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                        
+                    
+                
+            
+            
+                
+                    
+                        
+                            
+                                
+                                    
+                                        
+                                            
+                                                
+                                                    
+                                                        
+                                                            
+                                                                
+                                                                    
+                                                                        
+                                                                            
+                                                                                
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                        
+                                                                                        
+                                                                                        
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                                Address.
+                                                                                            
+                                                                                            
+                                                                                            
+                                                                                        
+                                                                                    
+                                                                                     
+                                                                                    
+                                                                                        
+                                                                                            
+                                                                                                15 Dufferin Ave. Trenton, Ontario K8V 5C8 
+                                                                                            
+                                                                                        
+                                                                                    
+                                                                                    
+                                                                                
+                                                                            
+                                                                        
+                                                                    
+                                                                
+                                                            
+                                                        
+                                                    
+                                                
+                                            
+                                        
+                                    
+                                
+                            
+                        
+                    
+                
+            
+        
+    
+ ---- On Mon, 22 Aug 2022 18:11:55 -0400  sauropoda@gmail.com  wrote ----Just following up on this.-- Mike.On Fri, Aug 19, 2022 at 11:23 PM Mike Taylor <sauropoda@gmail.com> wrote:Hi, Peter, hope all is well. I am progressing with the Baromount paper, but have been sidetracked by the story of the concrete Diplodocus of Vernal, from which some parts of the mounted Barosaurus were molded and cast.One part of the story that's come up as I've worked on this is that in 1997, you worked with David Letasi of the Museum of Science and Industry (Tampa, Florida) to mount two Carnegie Diplodocus skeletons that Dinolab had cast. I heard it said that you bought one of the skeletons back around 2017 -- is that accurate? Where is it now?Thanks,-- Mike.
+
+
+
+
+
+--- StripMime Report -- processed MIME parts ---
+multipart/alternative
+  text/plain (text body -- kept)
+  text/html
+---
+
+
