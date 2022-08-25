@@ -1,0 +1,245 @@
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:abe:8488:0:b0:30d:e92d:be53 with SMTP id g130csp150142vld;
+        Thu, 25 Aug 2022 05:19:52 -0700 (PDT)
+X-Google-Smtp-Source: AA6agR64vN6ak+0xbPuyO775aY1THWOrl0nTSsrJDijzmc9ybFk941Y1emtsfMxjkOJDE3WqvWOJ
+X-Received: by 2002:a05:6000:2aa:b0:225:63d0:83aa with SMTP id l10-20020a05600002aa00b0022563d083aamr2184965wry.499.1661429991901;
+        Thu, 25 Aug 2022 05:19:51 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1661429991; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=PXJN8bGDp5R6/m30xdNyYbHWON+3HKuraafcLaRYjlSAZ1URe2F9PkxK7TmCarPdJL
+         tcr412QagT5TfFvUe9VY0tRBKKN+RQ3MWwqTvCTUZG/DjrJrCGjQGXgbqGc7qog+XOj+
+         TEyNiPDIYxhsqY8cCaENHNEDK42U8IecT3xyomNEYdMku+agxgZaZ4XboW/pMbtTQi2f
+         WhhCYOQ0GBwjrPH0Ihxtr0AtGsPz7WvPYQp99o2l8naabR+0FAUlaIW8zJESebwg8/cZ
+         w/20BztdIziihT4o+oGGU+L7fJP7t60enq27jMstKwLV38E83L4t8mgoOiiOAW1V5J9Z
+         Y+jA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:msip_labels:content-language:accept-language
+         :in-reply-to:references:message-id:date:thread-index:thread-topic
+         :subject:cc:to:from:dkim-signature;
+        bh=R6uLszI8rk6PQn4g2nu9dzAAHRY0zTkr3dsVo19bEAw=;
+        b=HKMsg2JDKB53UYSpX0PMH9n6g85L1DkmMuepMMkw3LRtOvWEnzSD6KZb4GPYRheKkQ
+         6Xv8dKWowVE7KhVpsuXLRUWPRbJ3nf7t/KKcTcfo1awYNVBmf921NjL9dzQMNtiwU8Sw
+         y8XfbTNMRmjhQt9ix2rHJldA7Zbs2XVjUngxaB9/5shnYmFrgGUjTEJ6oHI44IWbfa4B
+         WhjXsiqOj7w1+Xo2TPtPHi0tsX6d0d7bDAhEWXiLQm0hK6OyPtg4z9JC+NfTe7R2Qi4T
+         EJU8RPixBRi1sdr+1vTcNWh74vRJlwEUoJj+Cu25r4VpTe/i3NfR1m2/2HveAEumx+BR
+         nM2g==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@nmscotland.onmicrosoft.com header.s=selector2-nmscotland-onmicrosoft-com header.b=E2LDVZ4S;
+       arc=pass (i=1 spf=pass spfdomain=nms.ac.uk dkim=pass dkdomain=nms.ac.uk dmarc=pass fromdomain=nms.ac.uk);
+       spf=pass (google.com: domain of nick.fraser@nms.ac.uk designates 18.133.136.102 as permitted sender) smtp.mailfrom=Nick.Fraser@nms.ac.uk
+Return-Path: <Nick.Fraser@nms.ac.uk>
+Received: from egress-ip7a.ess.uk.barracuda.com (egress-ip7a.ess.uk.barracuda.com. [18.133.136.102])
+        by mx.google.com with ESMTPS id h11-20020adf9ccb000000b0021ffdaddec9si11071131wre.617.2022.08.25.05.19.49
+        for <sauropoda@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 25 Aug 2022 05:19:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of nick.fraser@nms.ac.uk designates 18.133.136.102 as permitted sender) client-ip=18.133.136.102;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@nmscotland.onmicrosoft.com header.s=selector2-nmscotland-onmicrosoft-com header.b=E2LDVZ4S;
+       arc=pass (i=1 spf=pass spfdomain=nms.ac.uk dkim=pass dkdomain=nms.ac.uk dmarc=pass fromdomain=nms.ac.uk);
+       spf=pass (google.com: domain of nick.fraser@nms.ac.uk designates 18.133.136.102 as permitted sender) smtp.mailfrom=Nick.Fraser@nms.ac.uk
+Received: from GBR01-LO2-obe.outbound.protection.outlook.com (mail-lo2gbr01lp2055.outbound.protection.outlook.com [104.47.21.55]) by mx-outbound15-34.eu-west-2a.ess.aws.cudaops.com (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO); Thu, 25 Aug 2022 12:19:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=MIH00A8JHV97H+EF1xBaf5PeR/x0v3277fSa+ZiGJKjQgCVaHTrsFu0IAjznjf6SV15J2on/1yWhEmI5HQEPWCj/rShpJfVlGD1XJAx0eCZMZqQSJxcrG6r9ATK/EcYFAWoLRWaPoem+EwvHHEr+DUOUmVgCZtiuUQQmT+aTdipPxWnH7tEnoS5WDuhZ1iWuNHi4ZPCdJxD/9pb+1yWAQjkHZJ1x42cCLXLgpHUYKiYOgvfxvMx4Y84d0T7r3mdb5bwMjmL9Tdx9h2AZuHgwtLLis8pcwnvG7Mif1939Y8jwsfcAASa5Pr5FnAqRRDBe2exd4VithAt7FM23JVbYBg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=R6uLszI8rk6PQn4g2nu9dzAAHRY0zTkr3dsVo19bEAw=;
+ b=YTN2oDXZAxFYKJCHvpxNk4OXkPA02qSGjeTmSiUr8nBe2GHdZQiOd0PP0ov08/q4diTJwPLWbO+kbh+6ZmsMD7O1DibLle0UB02zfXnoZfUybTNOZvJkeb8TXk+XFKD3Dpwzk5GOp/QQFbwASskn/gguIWXDZBLztkLvusmdZ4w+zahOF2h2PSF5IsIX0AdSL469D15narjCekEgaf0dc+BT5eeEPUoqV/1Zd8OYDOaTfD2iQ0BzIGbEgJcDF6eHLeYv3eaNWyovIdV9sHAhzObfaQ2XFo4zdEKFEKnSnW6EaizG/47eTvJFhjU+2rB92s6wTnqoebUBZJsIc0U1ow==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nms.ac.uk; dmarc=pass action=none header.from=nms.ac.uk;
+ dkim=pass header.d=nms.ac.uk; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=nmscotland.onmicrosoft.com; s=selector2-nmscotland-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=R6uLszI8rk6PQn4g2nu9dzAAHRY0zTkr3dsVo19bEAw=;
+ b=E2LDVZ4SBv7EuOWukwQA34yLPHiHn9eB2geBxobv3es+2/HDcerQChss7akweVqQnmWBf0YKv8kQWl8QtGhWMijtZROGT5D8Pp9c6ajPFu8Nm7jl+9ddh7+VGxEkz6PmlBvxrK+Vn2HFB5nWfKH3RyBR8Z+iSJWnAeyyhh1R6Jk=
+Received: from LO0P265MB6485.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:2cb::13)
+ by CWLP265MB4019.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:119::12) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5566.15; Thu, 25 Aug
+ 2022 12:19:46 +0000
+Received: from LO0P265MB6485.GBRP265.PROD.OUTLOOK.COM
+ ([fe80::387d:d772:a7dc:79e4]) by LO0P265MB6485.GBRP265.PROD.OUTLOOK.COM
+ ([fe80::387d:d772:a7dc:79e4%7]) with mapi id 15.20.5566.015; Thu, 25 Aug 2022
+ 12:19:45 +0000
+From: Nick Fraser <Nick.Fraser@nms.ac.uk>
+To: Mike Taylor <sauropoda@gmail.com>
+CC: "dino@miketaylor.org.uk" <dino@miketaylor.org.uk>
+Subject: Re: Concret dinosaurs
+Thread-Topic: Concret dinosaurs
+Thread-Index: AQHYuHZyHU6gMZih/UyP+81Ul8bnyq2/hseAgAABYkc=
+Date: Thu, 25 Aug 2022 12:19:45 +0000
+Message-ID:
+ <LO0P265MB64851F86B3DE03184B144CAAA6729@LO0P265MB6485.GBRP265.PROD.OUTLOOK.COM>
+References:
+ <LO0P265MB648599EF2CAE25CA716C1A67A6729@LO0P265MB6485.GBRP265.PROD.OUTLOOK.COM>
+ <CACnMvBa9i5dk0z0GQpiuv7FXCTA81CBg2COz5Ysh7xcKOsF9Yg@mail.gmail.com>
+In-Reply-To:
+ <CACnMvBa9i5dk0z0GQpiuv7FXCTA81CBg2COz5Ysh7xcKOsF9Yg@mail.gmail.com>
+Accept-Language: en-GB, en-US
+Content-Language: en-GB
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=nms.ac.uk;
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 7eb7f2a8-3473-417f-0b78-08da869418fd
+x-ms-traffictypediagnostic: CWLP265MB4019:EE_
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ rc33BoGVkr+At6wI52ubwRylMws9BLEzSd3SKitOBJB7BmmmqfO+Kcqcp+QHLDKan52X5fIm8Qo54M9cqEFr4zCY/ERBm96KmwGUdakJ6Qc7a0t48O7yAMHQeEGQ1iZV5RLylUs9OpFn90loKq3rHenLeVs60GnRv5p7q5ln94w6cE5xUZeU3u6zlp+hOe9HouKMKF+6ohoyQ5/Zkh3fqhFtT4jRk1PDAy5f2BXcVCvexwAy20+MXTYRCGlLX8swGEmwfKr6BfOojzFYvFBZMi5LTs2PWuEHaLAShamz/WLh0FFmxXk1IqeQ/uC9SbgFk8+2KIIa4rpSCzYcu2EeINyqdu2elUicKCxewd5389+4bn7GW/PSqDm533S1hI8sgATr2i5JYiP40ljZzTEjA3WA6ikrOWK9DbOiLasTbaAT+pDHV0HmuZzZTEoQtzswAXLUAAFIh8junmD6armospLsqVFKRUWdWnVU7mpPWvqdwoz41qZAeWNZMJqFGSAno5UNDJw10PWZyiOvPby+JzN8lv23+mA7TtJnnaazJ+7+icSNRtPEp6DzpxYkdXTL0PMOjC0SlxnhjLS9sLqE+KlUcTc9WZuJdxrnW6ltfuTaJ2KYN0TwQwfb9y3TKikDqNXm8OBzNMTpOum7ZYCcsFgBeR/2MuU5DaPsNkJTlMNvjc1SX9xUaQd4O6TpGw+emjGwjoPsZpLuPXaJRYpTN9QgT4+fp3fPRV7sYn2BKJxhaGlQpm5es0BQ4ju5GgiSQKXv564zIkKA+yP7efB82w==
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LO0P265MB6485.GBRP265.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230016)(39850400004)(366004)(376002)(346002)(136003)(396003)(2906002)(478600001)(3480700007)(38100700002)(122000001)(71200400001)(33656002)(8936002)(5660300002)(52536014)(316002)(19627405001)(786003)(41300700001)(6916009)(86362001)(41320700001)(53546011)(9686003)(83380400001)(6506007)(7696005)(66476007)(66556008)(64756008)(38070700005)(186003)(26005)(8676002)(55016003)(66946007)(66446008)(4326008)(7116003)(76116006);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?us-ascii?Q?kPRkWl181L9wjyfX9tvbAXE+Vn6+4z8a1mZHbIY03lEuSpFg13nCLHIWV7uJ?=
+ =?us-ascii?Q?VD4+QTWdrw6VWdh7FNsxLQ57AAlPyziu39jOdFXJ1RYYBlKq9kfzOAap8isC?=
+ =?us-ascii?Q?26aorFwjpqNozOQ29XvrYyKmMmRQVgJ2Qhhxn+5wV/va5aWKcJLOVjXPac0E?=
+ =?us-ascii?Q?eQCqRtukADRODMC5hoHSd+Kaev5mJ1zh+TdH0yYYEmvbF1Ozz4fTm0WEiw84?=
+ =?us-ascii?Q?GeXbGKNyajHfd0F3yvyRpKtwIX4pu6vc4KG4m+JD07StRNDX7mtwhW9zx993?=
+ =?us-ascii?Q?jIRHd3CzKMEvN0CKOTV+1DqDHTSQ4obXEoENar9DfjdLrmA7cvyXS4Y4YBoS?=
+ =?us-ascii?Q?L+5w2zQRVATIKZm9a3mz2PrBCbJGAEHqoL9pCoFPkVJZI+aubxhQkjfQXNeP?=
+ =?us-ascii?Q?Y00tTZ1B4ntH/7uqxhUVtzBKHDVrPib90INfLvEEZK7sIx9XbOI/K4/mkKJY?=
+ =?us-ascii?Q?xBwHaBvuWV5GJkfdpuId6yGdUQj4P0cKh8ozTf3iU4/TfXVi3wszDwt+mi4c?=
+ =?us-ascii?Q?Xx7FZnkxbdaCe7Ygs1MrUVewnUzVuV4JLvP3wdxLoyqDOeveaKPTd+XhLtgj?=
+ =?us-ascii?Q?JTYJAEjoSVtdmmnhTey2ea4Zgn4qJxwTtIUL8u7HsecoxVOVTdCopI8oR/Eh?=
+ =?us-ascii?Q?GpVSt0hYSu4Z1cMytV6Djk9plfgmx8gR2equTxFYdDBNTCdJv1dg47ICfnLQ?=
+ =?us-ascii?Q?nLCGfSabO34Ho1FF4wfH2uh1wv2gBZTILJUBIfWIXxonSH4yWGMDtZkau1xY?=
+ =?us-ascii?Q?AivMt6T+1Mkd3WlYcZ2xiX18BJ320Z6fDS8XLVD0FNUGzqTQCLflzZC3zCYQ?=
+ =?us-ascii?Q?RCYqpseBqbxkFUbWVGMCHmZS2ijQxfCM/YyfGn1X8rLT1AlHfiPyhW6y4CBf?=
+ =?us-ascii?Q?lmWEQTGaQQ9Zqma4aETPrAO3o7Lo0qBp12oM0JNfLLuP+TFoxn4Ijlw4vsw5?=
+ =?us-ascii?Q?xD4jwuAxX3sdICWHkJJWDMgAQprUYkE7W4beEZ1MTA0h5och6zsFE1RtMk05?=
+ =?us-ascii?Q?XHMBJY1liSzr7ZiSKe3AbfpL7QjXAcmSuxr7iGChLaWyZlgdCSuMIsY+Ll1V?=
+ =?us-ascii?Q?9uK9uu4pHjXUyz1XIAXtFHLY+KnFyRh3yXYtXwUdmgrp1Bx1d2vyxD7cM6JA?=
+ =?us-ascii?Q?ulT4sLeVZeAWtY+TA+o+NRRKV5HvwewOa+Avf57wikYLzzo9wH6TfPRBOO6Y?=
+ =?us-ascii?Q?dw9tkwiIIPE5+9y5RfOqf84q1CNLuonIw5MGKhBvRmdvxeDxbKmGwIobdRAz?=
+ =?us-ascii?Q?P+VD2sL7oR60noYyf7y1YPzg8vnbf6Fu9l2tXPVGsXFN7ong6xIAsMFXCr6r?=
+ =?us-ascii?Q?7L7vJ3WHvTrLrxIiCVlNVNvJRJvpigcTuzxjPFTRzLof8i7PvW1CuucbYxbf?=
+ =?us-ascii?Q?pocwQihvG+BZk/sRKQuc06K8hE6XpkQTWRQbusslBH11pD3jR4zNxqKCajvO?=
+ =?us-ascii?Q?aZ2NuC71wH2j9tgMLmGm/EUKO67KnwJx/J/0QI0Gl6QFgkL7P7qRjNRbS+nQ?=
+ =?us-ascii?Q?63lthkOGi3wfAmNu1J0UbikG5MeKncspeJgMfputZ/34zmyC3VEF/TAJ6rLv?=
+ =?us-ascii?Q?Ef2krLeh6pcXYP15W4vmQqA6ood5jwnpX9KeOFBx?=
+MIME-Version: 1.0
+X-OriginatorOrg: nms.ac.uk
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: LO0P265MB6485.GBRP265.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: 7eb7f2a8-3473-417f-0b78-08da869418fd
+X-MS-Exchange-CrossTenant-originalarrivaltime: 25 Aug 2022 12:19:45.8396
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 412d8670-406c-4cd5-a30d-9672db1f499b
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: JauhfylUMV3sJoDl4P9M1skMYintfavbvk0dvuuqwNTFo7E2GjHhHlok+KnXC+CWZuM0LE6HqQKMiUXtPdYvQQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CWLP265MB4019
+X-BESS-ID: 1661429987-203874-5343-7186-1
+X-BESS-VER: 2019.1_20220817.2044
+X-BESS-Apparent-Source-IP: 104.47.21.55
+X-BESS-Outbound-Spam-Score: 0.00
+X-BESS-Outbound-Spam-Report: Code version 3.2, rules version 3.2.2.242326 [from 
+	cloudscan9-52.eu-west-2a.ess.aws.cudaops.com]
+	Rule breakdown below
+	 pts rule name              description
+	---- ---------------------- --------------------------------
+	0.00 HTML_MESSAGE           BODY: HTML included in message 
+	0.00 BSF_BESS_OUTBOUND      META: BESS Outbound 
+X-BESS-Outbound-Spam-Status: SCORE=0.00 using account:ESS112133 scores of KILL_LEVEL=7.0 tests=HTML_MESSAGE, BSF_BESS_OUTBOUND
+X-BESS-BRTS-Status:1
+X-StripMime: Non-text section removed by stripmime
+Content-Type: text/plain; charset="us-ascii"
+
+Hi Mike,
+
+Sure, no problem citing as pers. comm.
+
+Here is Mark's e-mail:
+markshaw1945@gmail.com
+
+Do you have Ian Rolfe's?
+ianrolfe@waitrose.com
+
+Cheers,
+
+Nick
+
+________________________________
+From: Mike Taylor <sauropoda@gmail.com>
+Sent: 25 August 2022 13:11
+To: Nick Fraser <Nick.Fraser@nms.ac.uk>
+Cc: dino@miketaylor.org.uk <dino@miketaylor.org.uk>
+Subject: Re: Concret dinosaurs
+
+Thanks, Nick, this is all really helpful. Two followup questions
+
+1. Would it be OK to cite parts of this in a pers. comm.?
+2. Do you have an email address that I could use to contact Mark Shaw?
+
+(The notion that mounting a sauropod would be abandoned because of the desire to use the space for corporate events is all too easy to believe, especially in light of the NHM London's getting rid of their existing Diplodocus for exactly that reason.)
+
+-- Mike Taylor (the sauropod one)
+
+
+
+On Thu, Aug 25, 2022 at 12:59 PM Nick Fraser <Nick.Fraser@nms.ac.uk<mailto:Nick.Fraser@nms.ac.uk>> wrote:
+Hi Mike,
+
+Sorry, got distracted. I shall try both e-mail addresses now: surely one will get through to you!
+
+So your namesake at this end is the person that knows most about this. He reckons there will be nothing more than an internal memo (at most) that addresses the possibility of NMS obtaining a cast of the Diplodocus. He also suspects there is little chance of any such memo being kept (or at least readily retrieved) in the files.
+
+Mike arrived at NMS in 1993, so a bit later than the period that most interests you. Ian Rolfe's term as Keeper of Geology began in 1987. Mike recalls  that Ian Rolfe suggested, perhaps more than once, to the Director (Robert Anderson and/or Mark Jones) that NMS should have a dinosaur of some kind in the Main Hall - a sauropod, he thinks, presumably because it need not take up very much floorspace physically, and perhaps also for its visual resonance with the architecture. Even better if rearing!
+
+So, as you are aware, Vernal were recasting - or rather remoulding - their cast in 1989. So it does indeed make entire sense for a letter to come from NMS as it does seem that there was some kind of fixation on a sauropod dinosaur in the Grand gallery (Main Hall) - at least in the years immediately post 1989.
+
+Mike's memory is that this was not taken further (pretty obviously!). He doesn't recall any more detailed investigations (e.g. of floor loading). It might have been because of the increasing shift towards renting out the Main Hall for events, i.e. the skeleton would get in the way of dinner tables, viewing corporate videos on the screen, and so on.  Mike has a feeling that Mark Shaw  (a former Keeper) tried it again later, during the mid-2000s, but with no better luck - so Mike's memory of a conflict with commercial usage may stem from this later approach.
+
+ So, while we probably don't have any written documentation, what you suggest does indeed have resonance.
+
+Sorry we can't be more definitive, but hope it is of some interest.
+
+Cheers,
+
+Nick Fraser
+Keeper of Natural Sciences
+National Museums Scotland
+Chambers Street
+Edinburgh EH1 1JF, UK
+
+Tel: +44 (0) 7557 863 723
+E-mail: nick.fraser@nms.ac.uk<mailto:nick.fraser@nms.ac.uk>
+
+All our museums are open. This includes:
+
+National Museum of Scotland
+National Museum of Flight
+National Museum of Rural Life
+National War Museum
+
+
+------------------------------
+
+National Museums Scotland, Scottish Charity, No. SC 011130
+
+This communication is intended for the addressee(s) only. If you are not the addressee please inform the sender and delete the email from your system. The statements and opinions expressed in this message are those of the author and do not necessarily reflect those of National Museums Scotland. This message is subject to UK Data Protection legislation and the Freedom of Information (Scotland) Act 2002. No liability is accepted for any harm that may be caused to your systems or data by this message.
+
+All our museums are open. This includes:
+
+National Museum of Scotland
+National Museum of Flight
+National Museum of Rural Life
+National War Museum
+
+
+------------------------------
+
+
+--- StripMime Report -- processed MIME parts ---
+multipart/alternative
+  text/plain (text body -- kept)
+  text/html
+---
+
+
