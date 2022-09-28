@@ -1,0 +1,203 @@
+Delivered-To: sauropoda@gmail.com
+Received: by 2002:abe:1241:0:b0:31a:aff6:c71e with SMTP id 62csp453273vls;
+        Wed, 28 Sep 2022 13:14:18 -0700 (PDT)
+X-Google-Smtp-Source: AMsMyM7sCUVIC9zOYWgQyREkaXlsbL1LT4AzVuMwKAOS/Y6vFa3SR4VxfKmanxJC0f2ZjqMfpEb8
+X-Received: by 2002:a05:6402:50ca:b0:451:a711:1389 with SMTP id h10-20020a05640250ca00b00451a7111389mr34185555edb.239.1664396058245;
+        Wed, 28 Sep 2022 13:14:18 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1664396058; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=jH5KSb8/dMmmwsYr2CPt31zu7MDIXWsTLVt1YdTlxB5R4uQA71HA5ZmVZsSoXvJ6+a
+         cYgkPJOlfh/uKLaRNrL0ExgriiVazq4lPhPPkI1wzvL3JswDZ+/JZNiuuqhOgz9Nz3jh
+         Tpq3BhpWaUc5ksp1ScFcSqsNVPPGyWwkGHN5gOnn7rFOmKh+Eu1T3nn7Tna4Kx8+duxi
+         V/WTS7z+TvsZkdYBsffwNuZCMOfXWNergLsP61UzgJKYUKLVmVzDMdUZhLnKCR2Fa/+e
+         sB49bP6EUVEemAtbVdvSdDpCNkhHcJhzd4JmBdj6+oZiED4uldB+xKmn1Y20d5LZV7aR
+         Xe+Q==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:msip_labels:content-language:accept-language
+         :in-reply-to:references:message-id:date:thread-index:thread-topic
+         :subject:to:from:dkim-signature;
+        bh=wNsVh/ZYImr7d+W4J36h2x6ylZvFBaHijXrnYo9sHbc=;
+        b=jhN2ju3LfJlWbOnlRU4YFec0rUPj/F87Jya6ghKfCi+I9dP7Ep3iyGaKjeLtOKuj/W
+         mNzTUw7lv2poidn1IZMl9UjGMz5xYbpvQmIVUc2wFFnrhqH0f+D+2AFViv3lBhSDyEDh
+         e+aUdMDxbNdoeUWtlur5SPZPw7SOQORNpgGKOh3cbwZnTxgi6EFmYmnLPZQJttV+Tg45
+         zUnOsTf87a7iSoUiLZ8yHaGgh+h4uqYaKZIdpdFUh8hVEyAg/7NBds9nvO9cWCRRCBz1
+         nGz7xj21VkwdA8bcgEY52DgOLhN5NSrV7wUIT6HnWOHbZ9Jq3Z8Ult6964hwkh0WH1Z8
+         jEqw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@carnegiemnh.org header.s=selector1 header.b=DT5FWpNh;
+       arc=pass (i=1 spf=pass spfdomain=carnegiemnh.org dkim=pass dkdomain=carnegiemnh.org dmarc=pass fromdomain=carnegiemnh.org);
+       spf=pass (google.com: domain of bermand@carnegiemnh.org designates 40.107.94.134 as permitted sender) smtp.mailfrom=BermanD@carnegiemnh.org
+Return-Path: <BermanD@carnegiemnh.org>
+Received: from NAM10-MW2-obe.outbound.protection.outlook.com (mail-mw2nam10on2134.outbound.protection.outlook.com. [40.107.94.134])
+        by mx.google.com with ESMTPS id nc8-20020a1709071c0800b0078316f0b5f8si6191149ejc.88.2022.09.28.13.14.17
+        for <sauropoda@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 28 Sep 2022 13:14:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bermand@carnegiemnh.org designates 40.107.94.134 as permitted sender) client-ip=40.107.94.134;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@carnegiemnh.org header.s=selector1 header.b=DT5FWpNh;
+       arc=pass (i=1 spf=pass spfdomain=carnegiemnh.org dkim=pass dkdomain=carnegiemnh.org dmarc=pass fromdomain=carnegiemnh.org);
+       spf=pass (google.com: domain of bermand@carnegiemnh.org designates 40.107.94.134 as permitted sender) smtp.mailfrom=BermanD@carnegiemnh.org
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jOUsPBK4Fzw4iglwmAXa11jIiVfZajgz1jcvM2W+k4svDzg7yQyLk7q+uYXCA5ViC22N1FNe5Smw5vVl0WyDfjNMbKzkrkcWEDpvfzi8Iq5528eWzz0Ckrc/P4KTnO5LSmgnvnhTVZc6goqEM4C6Buz7T/LseIuVQEh0WA3jNjoVj0N1o6FbvJDEbo6+bhNchteu8Z7FtkS3twrE/AXrnqN7CZlfbIk53I3mU5FY/3dsplh7kNhTHwpRaYLJRPME0uXyq7HY+v9hJGHcahdMMdsvzG6dZ001EjgI5vh9AWHf8HfEJEWFh7t8mV3g3k8KUKm5EHxuuyVUkt6RGcLDFA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=wNsVh/ZYImr7d+W4J36h2x6ylZvFBaHijXrnYo9sHbc=;
+ b=JOyIBdkTVueCgk8J4rMKgbedbR8pkA9lRk6JAzxoy8OWV+6uOqUbNcO5w4uAt01F53C1jLIEUJmWX6Y9qd2nTBVgnc3RUSkP7r3+gj+fQm0kw4MJ6XBey630xILG7NqewhF7YJBtuY7wLWyJCCjho3z7nd08DhSsl2Dqgw/Us+hOHR1tpIUgGBAvuMuDU5RgzskxcV0m8n+zMec/m6yhXkfE5DTryRKwc+sSZtmPtfEzMcIdMCoSEEHORPh9Cqn3zaG/6k/j7wODptbI1vR32wFK/BlkccVOGAcjsTVCoRZJddR3aQfmAxVbRVWSLwuTkyAqUpdg5UN+Ni0HiN18oA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=carnegiemnh.org; dmarc=pass action=none
+ header.from=carnegiemnh.org; dkim=pass header.d=carnegiemnh.org; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=carnegiemnh.org;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wNsVh/ZYImr7d+W4J36h2x6ylZvFBaHijXrnYo9sHbc=;
+ b=DT5FWpNh3NQiAuvo1KWoPKiEVvm3TvUeb+rFC3F98wxYtqL84qL/w2opk4b3KqG7BqeFjuz/QdunSdDJRlbgOIh1zwA2LRUcRdmtmCuC7Gf+re8xiG5l/QrGVWVJTTgxJnjhZE/Qh++i5D5a6+zwuKoEwP2oarZ3uhpLXLbeuzo=
+Received: from MN2PR02MB6206.namprd02.prod.outlook.com (2603:10b6:208:181::19)
+ by SJ0PR02MB7806.namprd02.prod.outlook.com (2603:10b6:a03:322::22) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.5676.17; Wed, 28 Sep
+ 2022 20:14:13 +0000
+Received: from MN2PR02MB6206.namprd02.prod.outlook.com
+ ([fe80::e31f:3c34:537d:b916]) by MN2PR02MB6206.namprd02.prod.outlook.com
+ ([fe80::e31f:3c34:537d:b916%7]) with mapi id 15.20.5676.017; Wed, 28 Sep 2022
+ 20:14:12 +0000
+From: "Berman, David" <BermanD@CarnegieMNH.Org>
+To: Mike Taylor <sauropoda@gmail.com>
+Subject: Re: The Carnegie Diplodocus molds
+Thread-Topic: The Carnegie Diplodocus molds
+Thread-Index: AQHY0z3OJrMaBTl3BUCxUpv9Wd7pBa31MMcC
+Date: Wed, 28 Sep 2022 20:14:12 +0000
+Message-ID:
+ <MN2PR02MB6206B3B23847B5CB9F432A1CA6549@MN2PR02MB6206.namprd02.prod.outlook.com>
+References:
+ <CACnMvBajhFTWY7VS9SHnm5YT1ZOuTGCaA59tY82O4CEJHZBOMQ@mail.gmail.com>
+In-Reply-To:
+ <CACnMvBajhFTWY7VS9SHnm5YT1ZOuTGCaA59tY82O4CEJHZBOMQ@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=CarnegieMNH.Org;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: MN2PR02MB6206:EE_|SJ0PR02MB7806:EE_
+x-ms-office365-filtering-correlation-id: 6c8614b2-1051-4edf-601a-08daa18e02a1
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ aOXRxrdHSjNjNaAtK7eknVZ27tTlIXg2Xynrt/WkAoWiJi8gnMA+ERH1c7D69Vov1klG0n2qbAbZ/XZsaMmOXdexE8lXaP3gdY4xJ6I/gTgzC1mvcB9B3MFk6TIMayYbTQQzPXls4DMqz3aGEyAQ6zYGfWmmpN7XcnZWdaSkHHqifswm84FFG201mC42mbKNinvrm9tQIHf9mf9hwDCdf+WL4yGjpSFY5lP0MqNE1QeRMN5X7NaAmN+Sz8qeKdwHWZUGIRScLKsiDMPrcKMiIh54Eoz5Kl8HKnuLITQzpT7oIlNn43VQckNkONUDaLtVOEuSLIH7U3l1bLKqIdsjB69tSFcQhvhEMpofCVwXHTK09IpX8zjR32dnxDKFZQb5pmR3JY+4MyV1xuzoafwendXDtxr6eCOB1sKvDw4aJ1f+qcOPemJdWAjMbaGKOATBo2GHKDRVmOe3joynUxOBi97g2jqxR6WP2H3CgyGGJaUyd4+eN2hoK+LrOA1EWU8fxM8BZfOfGanojfcXKab3FpJhdKYg8uWETp4LKylNyFFx7SkcM6Sy/Ej/AeoVXR+FvnAmIP14oFd+UeQO2ERtTdyEPAUL9Zafp4MYkAGMCgsy9BsrAL2vOOvZXTVXzYpQy8RJzwIZKD8vDhwoOPTn0SS7ZxogTmyt39MSsBwAPgCC0xlfj4WXBq3vviccIXzjndrAJc9gGniyzZj69AjIXAIzVqvo/zPZEqcRXZoM9DguLDg2eZ16kkrljfzGI2k2
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MN2PR02MB6206.namprd02.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230022)(366004)(346002)(376002)(396003)(39850400004)(136003)(451199015)(186003)(19627405001)(6916009)(33656002)(86362001)(66899015)(38070700005)(3480700007)(122000001)(5660300002)(30864003)(9686003)(38100700002)(83380400001)(6506007)(7696005)(53546011)(478600001)(71200400001)(786003)(76116006)(316002)(66556008)(66476007)(66446008)(64756008)(55016003)(52536014)(8676002)(18074004)(66946007)(8936002)(2906002)(41300700001)(41320700001);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?Windows-1252?Q?XYh72vVM5JtbtPLCkzKgAmkNJtHKyQyEue0/Fea8IQLr63jiVEaLcYNC?=
+ =?Windows-1252?Q?llefBjrZzkYJWBgyKlnrMZfKHkg46psuR6lozmTKAU4WM4NkBRb80qE6?=
+ =?Windows-1252?Q?b64dAYOWdWUlPeM1Xr8qlQg9DhCA6ft/D0OdpH55k5UqW8b2Hm48Cq79?=
+ =?Windows-1252?Q?eqOvkFFSD7WI7XPBB5Kn8VfmL9+iMCEbZowcM4FUQXzuC8P9mn4sW0MY?=
+ =?Windows-1252?Q?8xChUYUBDA/HApNXK0hClzzmuOHbSHethg/6zWjnrffplftQkqK3LaoG?=
+ =?Windows-1252?Q?ACheT58o6F0ZIxsZC/9FBz/OdG89Cb/pDNl92GbDymLRUjU99t6pJDy7?=
+ =?Windows-1252?Q?auVgXQI0PVxC8RpIXOBFEdQleiy/GzLr4dOkzWW1RUADRulgE4NkoG9f?=
+ =?Windows-1252?Q?EIXwtRKP4NxnU+Kg/aQb/OSAOcTxIMhm1ZzhktB1x0S2dIM4GN0Phm4q?=
+ =?Windows-1252?Q?OwphXhYyRdup/0Zrk5DlYWzlA94BG4VR9o0shI9KYN/OSjmuoSz8gIKi?=
+ =?Windows-1252?Q?mXrIsa9rAfBzZ73dF2IOsF1IHhAz+4pBMkZ/ZzweqSocHSDCtu6IAfzb?=
+ =?Windows-1252?Q?fJJYMMIzFeEnnTQ1JBxke5cpc4syyjPyQTcko/9+Sj57Yxhfyyhgzhp1?=
+ =?Windows-1252?Q?L+XsG4KuWoK1LUWcG3AWo5pGwvm+2FZ1CdAmcFriZ4aBeByqt6HVRcGg?=
+ =?Windows-1252?Q?UuPX82xbAE2+YfcS7/XXbkSSfomU8M92iocv6Vt6V2to0jD8xEfQSbdu?=
+ =?Windows-1252?Q?LrJ0xXjTkfLDRZgP3zsSnwJRn/CuzpwioYvx0S2MskzmYCh0zbSpqmby?=
+ =?Windows-1252?Q?m2T1kFj38dpaQkC8lO1QmbglvQhzJqaIrPlp43y0bgLmPbpvFrKC2yZU?=
+ =?Windows-1252?Q?o95nA017eA2znlB/rh2YO9o0DgOhJtVU8FSkNf/FUzeqigQMCRA9kck7?=
+ =?Windows-1252?Q?0VjOx8ooC3fzfu2Fa+6YMW5q5z2ZxkqJ8bfWm8qeAcdgSudiLLbMPGi4?=
+ =?Windows-1252?Q?GId6hKuE/RTHqPPXXaEtu9kLlzfVzUuAGJwOj3BCj/dwznbAivj6GY1P?=
+ =?Windows-1252?Q?56uXmrGbaDKfGhAW09ieLLCA67Q5ZrCbsk9nY+v3QPx2Wkbk3JFSTL6t?=
+ =?Windows-1252?Q?/l3LLxQQBteT1g9NlFOCJyNMu1Q55Q+C6nvznkWTRd7+cg8oYqBL9rAZ?=
+ =?Windows-1252?Q?4Z3wWIQkaBrryXl6F2f16wdR5bFI2k5j47Mpi6QKk5FFPZdgqmNYUSoU?=
+ =?Windows-1252?Q?/PXmqVWibDQP8+8EwDNAfunfzCrnJTj/7GiC7y3wv0ZXHMrliH8l6/E1?=
+ =?Windows-1252?Q?Pvti3RnedQSuAcaoMEEHsNLkSLXvLlBpm6uV8cPZm+dI8+SLvfYPwSE8?=
+ =?Windows-1252?Q?g0giVkv5kvFo11JbzUa8VeEsrGulbDYrhwOHG+LKK8tITwTnZU2vE5Bh?=
+ =?Windows-1252?Q?3sShetaZ9kf2M/lGfO4HBWZcp1odsJj/WNJDWwwGpYYdQeJ60JWOc1u+?=
+ =?Windows-1252?Q?oVeJb0kkua8KyKpr2RQ6m0IztEFEybeH+yoNLaI2E7J9Xz+q50C9iWvZ?=
+ =?Windows-1252?Q?tddDhcf1zI9dV1ecNWTE2iCwMrI1qNCLP8nnGYjGKRGak4aLqYjxhmU/?=
+ =?Windows-1252?Q?xjCSSMLXgFkke0hq+s0Oi8CmNYcRkhlVuYxsYorFBIJTVM2UTRwrtFny?=
+ =?Windows-1252?Q?xYF/5pO+aGUmCqKi6SkjFxdHU5iHcLDz/+mH8jF5nRDVU3S5A56+8mre?=
+ =?Windows-1252?Q?4H8Kn7xnJFpzv/Nf9bTM/CEOX36PLUaqszznvwyl?=
+MIME-Version: 1.0
+X-OriginatorOrg: carnegiemnh.org
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: MN2PR02MB6206.namprd02.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 6c8614b2-1051-4edf-601a-08daa18e02a1
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Sep 2022 20:14:12.7592
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 9b45694f-7f01-41cc-9f79-15bf5b9b2a16
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 9S4oMYPti1hXp4B5XS4vydQz2W+8hKaJbf9BTBI4jRGzgM64v6QGgDRzI0WTDu1Tb8enjNC4+Rqal0bNVhHEjQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: SJ0PR02MB7806
+X-StripMime: Non-text section removed by stripmime
+Content-Type: text/plain; charset="Windows-1252"
+
+Dear Mike Taylor,
+Your account of our conversation on Sep. 27 regarding my recollection of the fate of the Diplodocus molds after leaving Vernal, Utah, is accurate and complete, and you have my formal permission to cite this statement as a personal communication authorizing its use in your upcoming publication on the subject. Your account of the history and fate of the molds is fascinating,  though they still remain uncertain, is one that has long been neglected and needed to be told. Thanks for sharing what your research has revealed, and I look forward to receiving a copy of your forthcoming publication, as will others at the Carnegie Museum.
+
+David S Berman
+Curator Emeritus
+Section of Vertebrate Paleontology
+Carnegie Museum of Natural History
+Pittsburgh, PA, 15143
+________________________________
+From: Mike Taylor <sauropoda@gmail.com>
+Sent: Wednesday, September 28, 2022 9:25 AM
+To: Berman, David <bermand@carnegiemnh.org>
+Subject: The Carnegie Diplodocus molds
+
+CAUTION: This email originated from outside of the organization. Do not click links or open attachments unless you recognize the sender and know the content is safe.
+Hello, David, and thank you so much for speaking with me this evening. Here is the current version of how I am summarising your acocunt in the manuscript that I am finalising, along with Steve Sroka and Ken Carpenter.
+
+Yet another possibility is described by David S. Berman (pers. comm., 2022), relating a personal communication from John S. McIntosh. In this version, a person who had obtained the molds for the use of a public museum — most likely Harold Minges for the Rocky Mount Children’s Museum — became embroiled in a dispute with the museum administrators and sequestered the molds in a barn. There they remained for some time until the rubber straps that held the together the molds constituting each element perished, and the 600 pieces that made up the molds became hopelessly jumbled. Re-associating the pieces would have been an enormous job, as some of the more complex vertebrae were made from 20–30 molds (Nieuwland 2019:63), and it was probably never done. Most likely, the dissociated pieces of the molds were discarded some time later.
+
+Can you please check that I have correctly summarised your information in this paragraph? Finally, can I please ask you to formally give me permission to cite the pers. comm.? Editors increasingly require this.
+
+Thanks once more,
+
+-- Mike.
+
+
+P.S. In case you are interested, here is the whole of the section on the fate of the molds.
+
+
+So far as we have been able to determine, the casting of the concrete Diplodocus of Vernal was probably the last time the Carnegie Museum’s original molds were used. However, that was not Untermann’s intention. In his 1959 account, he wrote (p368–369):
+
+Several museums in the United States and from lands as distant as Japan and Italy have expressed a desire to acquire the molds and cast a Diplodocus of their own from either plaster or some of the newer synthetics. To date no museum has apparently been able to make satisfactory arrangement for the acquisition of the molds and the casting of a skeleton. We still have the molds in Vernal, and any museum, anywhere, is welcome to them just for hauling them off. […] The Diplodocus on the lawn of the Utah Field House is the eleventh replica to be cast from the molds […] Does anyone wish to cast the twelfth?
+
+From here, though, the story becomes uncertain and accounts are contradictory. Sassaman (1988) reported that “the molds finally fell apart because of old age soon after it [the concrete Diplodocus] was made”. Similarly, Ilja Nieuwland (pers. comm., 2022) says that “The original moulds were thrown away somewhere during the 1960s (nobody at the [Carnegie Museum] could be more specific than that)”, suggesting that the molds may have been returned to their origin.
+
+Both these accounts seem to be in error, as shown by a 1960 report in the Vernal Express newspaper (Anonymous 1960a; Figure 7; see also Carr and Hansen 2005). This says that in the middle of July 1960, the molds were collected by the Rocky Mount Children’s Museum (now the Rocky Mount Imperial Center, Children’s Museum & Science Centre) in North Carolina, with the intention that they would be used to create a twelfth cast which would be mounted outside the museum building next to the Tar River in Rocky Mount’s Sunset Park. But was such a cast ever created? Reports in the Rocky Mount Evening Telegram from April to July 1960 (Williams 1960, Bell 1960a, Bell 1960b, Anonymous 1960b) enthusiastically announce and discuss the impeding arrival, and the later articles say that by 7 July museum board president Harold Minges had left for Utah to collect to molds. Anonymous (1960) confirmed that the molds were collected on or around 14 July. But then the Rocky Mount Evening Telegram goes silent on the subject, and the project is never mentioned again. There is no positive evidence that the molds even arrived in Rocky Mount, far less that they were used to create a new mount. Thus newspaper reports from both Utah and North Carolina say that the molds set out on their journey from one to the other, but neither confirms that they ever arrived. On the other hand, there is also no report of the molds being lost or destroyed, so perhaps the most likely interpretation is that they arrived in Rocky Mount, but were found to be in worse condition than expected and quietly left in storage. This interpretation is supported by Rea (2001:210) who reported that “from Vernal the molds kept travelling — first, to the Rocky Mount Children’s Museum in Rocky Mount, North Carolina, although a cast was never made there”. Similarly, Moore (2014:234–235) stated that “From Vernal, Utah, [CM] molds of Diplodocus carnegii are shipped to Rocky Mount Children’s Museum in Rocky Mount, North Carolina. Because of the age-related damage to the molds, a cast was never prepared”.
+
+Hurricane Floyd devastated Rocky Mount in 1999, with flooding from the Tar River destroying the original Children's Museum along with all its exhibits and records (Leigh White, pers. comm., 2022), so no records survive that could confirm the molds’ arrival or any subsequent use. The museum was located next door to a municipal water treatment facility that also flooded and released unknown chemicals, so museum property that might have otherwise been salvageable in that area was deemed contaminated and had to be destroyed. If the molds were in storage at the Children’s Museum at this time, then this was likely the end of their story.
+
+The Children’s Museum was re-established at the newly built Imperial Centre, where it still resides, but no trace exists there of molds or casts of Diplodocus. Corroborating the hypothesis that no cast was ever made, most staff who worked at the museum in the 1980s at its old location do not recall any such cast (Leigh White, pers. comm., 2022). Potentially contradicting this, however, Jan Engle Hicks, Curator of Education at the Rocky Mount Children’s Museum from 1971–2002, has a memory of Diplodocus casts being on exhibit at the museum when she started work in 1971. She does not recall if they were still part of the museum collection in 1999 when the collection was destroyed. It is possible that the Diplodocus specimens that Hicks remembers on display were not casts of the Carnegie mount, but other specimens that were given to the Children’s Museum by LeRoy Kay from the Carnegie Museum (Bell 1906a).
+
+Whether or not a cast was made at Rocky Mount, it is possible that this was not the end for the molds. Williams (1960) had written that “the local museum plans to pass the molds on to the next group that makes satisfactory arrangements to acquire them […] Already two inquiries have come to the Children’s Museum asking ‘Who has them next?’”. Rea (2001:210) claims that “Eventually the molds found their way to the Houston Museum of Science, where they were used to fill in gaps in the Diplodocus hayi skeleton that had been swapped from Pittsburgh to Cleveland before ending up in Houston”, citing a personal communication from John S. McIntosh. (The skeleton in question is that of CM 662, which became CMNH 10670 in Cleveland, then HMNS 175 in Houston. Having been nominated as the holotype of the new species Diplodocus hayi by Holland (1924:399), the species was later moved to its own new genus Galeamopus by Tschopp et al. (2015:267).) Due to the loss of the Rocky Mount Children’s Museum records, we cannot verify that they ever shipped the molds to Houston; and we have not been able to obtain information from the Houston Museum. Brian Curtice (pers. comm., 2022) reports that he was in Houston in 1995 and did not see the molds in the collection, nor hear of their ever having been there. In the absence of evidence that the molds ever made it to Houston, it seems at least equally likely that the missing bones in HMNS 175 were cast and supplied by Dinolab, using the second-generation molds described blow, and that Rea (2001) misreported this.
+
+As recently as 1988, Rolfe (1988) wrote on behalf of the Royal Museum of Scotland, “At present I am exploring the possibility of re-using the Carnegie Museum, Pittsburgh moulds, although there is considerable doubt about whether they are up to the job, after so much previous use”. Sadly, his letter does not mention their then-current whereabouts.
+
+In an unpublished manuscript, Madsen (1990:4) wrote that “The fate of the initial set of molds is somewhat in question, but Wann Langston (personal communication, 1989) suggests that they seem to have been lost, strayed, or stolen during transport from ? to ?. Principles contacted in regards to the disposition of the molds could not provide specific information.”. Infuriatingly, the question marks are in the original. Since both Langston and Madsen are now deceased, there is no way to discover on which of the molds’ journeys Langston thought they were lost or destroyed. It is unlikely, at least, that Langston had in mind the their initial journey from Vernal to Rocky Mount. Kirby (1998:4) wrote that “Somewhere along the line, as the story goes, the molds received from the Carnegie had been shipped to a school down south and never arrived. So they were lost”. Since Rocky mount is about 2000 miles east (not south) of Vernal, it might seem that “a school down south” could not have referred, in a Utah publication, to a museum out east. On the same basis, the Houston museum would not seem an especially likely candidate for this designation, being 1300 miles southeast of Vernal. However, “down South” in the USA does not necessarily refer to geography, but to “the South”, a region composed mostly of states that were Confederate during the civil war — a designation that includes both North Carolina and Texas.
+
+Yet another possibility is described by David S. Berman (pers. comm., 2022), relating a personal communication from John S. McIntosh. In this version, a person who had obtained the molds for the use of a public museum — most likely Harold Minges for the Rocky Mount Children’s Museum — became embroiled in a dispute with the museum administrators and sequestered the molds in a barn. There they remained for some time until the rubber straps that held the together the molds constituting each element perished, and the 600 pieces that made up the molds became hopelessly jumbled. Re-associating the pieces would have been an enormous job, as some of the more complex vertebrae were made from 20–30 molds (Nieuwland 2019:63), and it was probably never done. Most likely, the dissociated pieces of the molds were discarded some time later.
+
+Putting it all together, there is no way that all the reports cited here can be accurate. Among the more likely scenarios is that the molds were successfully shipped to Rocky Mount in July 1960 (Anonymous 1960a, Anonymous 1960b) but found to be unusable (Rea 2001:210, Moore 2014:234-235) and left in storage. At some later point there were shipped to a school in a southern state (Kirby 1998:4) but did not arrive (Langston cited in Madsen 1990:4). It is possible that this happened in late 1988 or early 1989, between Rolfe’s (1988) letter that expressed an interest in using the molds and Langston’s personal communication to Madsen in 1989. But since this scenario is assembled from fragments, it is perhaps more parsimonious to assume that McIntosh’s account via Berman is correct. At any rate, where the molds are now, we can only speculate. As Madsen (1990:4) concluded, “It is truly a mystery that an estimated 3–6 tons of plaster molds could simply vanish!”
+
+
+
+The information contained in this message and/or attachments is intended only for the person or entity to which it is addressed and may contain confidential and/or privileged material. Any review, retransmission, dissemination or other use of, or taking of any action in reliance upon, this information by persons or entities other than the intended recipient is prohibited. If you received this in error, please contact the sender and delete the material from any system and destroy any copies. Any views expressed in this message are those of the individual sender.
+
+
+--- StripMime Report -- processed MIME parts ---
+multipart/alternative
+  text/plain (text body -- kept)
+  text/html
+---
+
+
