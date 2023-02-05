@@ -18,9 +18,11 @@ XXX check for more de-italicized _Diplodocus_ occurrences
 * [Page 77](#page-77)
 * [Page 79](#page-79)
 * [Page 81](#page-81)
+* [Page 82](#page-82)
 * [Page 84](#page-84)
 * [Page 85](#page-85)
 * [Page 86](#page-86)
+* [Page 87](#page-87)
 * [Page 89](#page-89)
 
 
@@ -111,7 +113,7 @@ XXX check for more de-italicized _Diplodocus_ occurrences
 
 * "At present, this cast is on display at the CMNH as a filler". Insert "in Cleveland, Ohio" after "CMNH". (This will help to prevent people assuming CMNH refers to the Carnegie Museum.)
 
-# Page 82
+## Page 82
 
 * "But when the cast was returned to them some time before the end of June 1991, this was not a simple matter to re-mount it outside the museum, as the scaffolding on which was the cast mounted had been cut in order to take it down." The text as submitted had an error (a missing "it") but something strange has happened here, perhaps in an attempt to fix that error. I suggest the following: "... it was not a simple matter to re-mount it outside the museum, as the scaffolding on which it was mounted had been cut in order to take it down."
 
