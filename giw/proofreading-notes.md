@@ -1,7 +1,5 @@
 # Proofreading notes for _The Concrete Diplodocus of Vernal_
 
-XXX check for more de-italicized _Diplodocus_ occurrences
-
 <!-- md2toc -l 2 proofreading-notes.md -->
 * [Cover](#cover)
 * [Page 65](#page-65)
