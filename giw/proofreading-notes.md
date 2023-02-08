@@ -1,29 +1,6 @@
 # Proofreading notes for _The Concrete Diplodocus of Vernal_
 
 <!-- md2toc -l 2 proofreading-notes.md -->
-* [Cover](#cover)
-* [Page 65](#page-65)
-* [Page 66](#page-66)
-* [Page 67](#page-67)
-* [Page 68](#page-68)
-* [Page 69](#page-69)
-* [Page 70](#page-70)
-* [Page 71](#page-71)
-* [Page 72](#page-72)
-* [Page 73](#page-73)
-* [Page 74](#page-74)
-* [Page 75](#page-75)
-* [Page 76](#page-76)
-* [Page 77](#page-77)
-* [Page 79](#page-79)
-* [Page 81](#page-81)
-* [Page 82](#page-82)
-* [Page 83](#page-83)
-* [Page 84](#page-84)
-* [Page 85](#page-85)
-* [Page 86](#page-86)
-* [Page 87](#page-87)
-* [Page 89](#page-89)
 
 
 ## Cover
