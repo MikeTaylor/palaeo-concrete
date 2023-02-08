@@ -67,6 +67,7 @@ XXX check for more de-italicized _Diplodocus_ occurrences
 
 * Caption to Figure 2 and elsewhere in the manuscript, you have replaced the phrase "some time" with the word "sometime", which does not mean the same thing. Is this something imposed on you by the style guide?
 * Caption to Figure 2: please delete "In the middle of the foreground is the mold for a posterior cervical vertebra in ventral view with anterior to the lower left." On re-examining the photo, I am not at all confident about this identification.
+* "which then had to be assembled into a skeleton": please change "assembled" to "put together", as there are altogether too many uses of "assembled" in this paragraph.
 
 ## Page 70
 
@@ -138,11 +139,13 @@ XXX check for more de-italicized _Diplodocus_ occurrences
 ## Page 84
 
 * There is very little margin between Figure 12 and the text immediately below it.
+* "The double-_Diplodocus_ display at MOSI": please remove the hyphen for consistency with other mentions of the double _Diplodocus_.
 
 ## Page 85
 
 * Caption to Figure 13: "stored in in the basement storage area". Please delete the spare "in"!
 * Caption to Figure 13: add "Photograph by Jason Huntzinger (Utah State University)".
+* "the double Diplodocus mount at MOSI.": please remove the hyphen for consistency with other mentions of the double _Diplodocus_.
 
 ## Page 86
 
