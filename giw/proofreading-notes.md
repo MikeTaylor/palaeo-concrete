@@ -59,7 +59,7 @@
 
 ## Page 68
 
-* XXX rework "one of those who in the 1930s were concerned".
+* After repeated edits, the second paragraph has become a bit of a mess. I suggest breaking the opening sentence in two as follows: "As recounted by Untermann and Untermann (1971), the genesis of the Utah Field House lay with Arthur G. Nord, supervisor of the Ashley National Forest. In the 1930s, he and others became concerned that the fossil wealth of the Vernal area was being stripped by museums outside the locality."
 * "The work was begun on October 16, 1947, completed on July 1, 1948". Please reinstate the "and" between these two clauses. Its removal means that the present version has a false parallelism that reads "The work was [..] and the building was dedicated".
 * "writing to museum director Douglas Stewart on 20 September 1922 as follows". Did you want to convert this date to the American format, like the others? I notice several other dates throughout the manuscript that have been left in British format. I have no strong feelings either way about this, but if you want to be consistent throughout then there is more work to be done.
 
