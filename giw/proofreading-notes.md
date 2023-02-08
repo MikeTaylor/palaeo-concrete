@@ -40,13 +40,15 @@
 * Abstract: "The concrete Diplodocus was the museum’s icon": _Diplodocus_ should be set in italics.
 * Abstract: "This cast moved to the Field House’s new location in 2004 and was remounted in the atrium." Please move the "was" to before "moved", as follows: "This cast was moved to the Field House’s new location in 2004 and remounted in the atrium."
 * Heading "NTRODUCTION": should be "INTRODUCTION".
-* Introduction: "As described by Taylor and others (in preparation)". Here and elsehere, this needs to specify "in preparation, a", since this is also a separate "in preparation, b". XXX spell out each of these
+* Introduction: "As described by Taylor and others (in preparation)". This needs to specify "in preparation, a", since there is also a separate "in preparation, b".
 
 ## Page 66
 
 * Running header (here and on subsequent pages): "Cultural", not "Cutltural".
 * "In this paper, we will briefly summarize the history of the original Carnegie Diplodocus, discuss how the concrete cast came to be, and consider its legacy." For some reason this is set in a different font from the rest of the paper.
 * Figure 1: this image is incorrect. We should be using the one at https://raw.githubusercontent.com/MikeTaylor/palaeo-concrete/master/figures/Figure-1-mounted-Diplodocus-in-2019--IMG_5787.JPG and it should be the full width of the page.
+* "As related by Taylor and others (in preparation)". This needs to specify "in preparation, a", since there is also a separate "in preparation, b".
+
 
 ## Page 67
 
