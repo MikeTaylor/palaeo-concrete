@@ -4,7 +4,7 @@
 
 ## Page 65
 
-* In the title, "Diplodocus" is now correctly set in italics; but unlike the rest of the title, it is not bold. Is this a house-style thing, or should it be set in bold italics?
+* In the title, the genus name "_Diplodocus_" is now correctly set in italics; but unlike the rest of the title, it is not bold. Is this a house-style thing, or should it be set in bold italics?
 
 ## Page 66
 
@@ -16,30 +16,33 @@
 
 ## Page 76
 
-* "Wann Langston (written communication, 1989; unafilliated)": Langston was probably not unaffiliated, as presently stated -- we simply don't know his affiliation at that time. (Also, unaffiliated is misspelled "unafilliated".)
-* "... a verbal communication from John S. McIntosh (unaffiliated)". McIntosh was probably not unaffiliated, as presently stated -- we simply don't know his affiliation at that time. (In both these cases, we are recounting a personal communication that was told to someone else decades ago. Afilliation information was not recorded at the time, and is not really relevant now.)
+* "Wann Langston (written communication, 1989; unafilliated)": Langston was probably not unaffiliated, as presently stated -- we simply don't know what his affiliation was at that time. (Also, unaffiliated is misspelled "unafilliated".)
+* "A verbal communication from John S. McIntosh (unaffiliated)". McIntosh was probably not unaffiliated -- we simply don't know his affiliation at that time.
+
+(In both these cases, we are recounting a personal communication that was told to someone else decades ago. Afilliation information was not recorded at the time, and is not really relevant now.)
 
 ## Page 82
 
-* "the scaffolding on which was the cast mounted". Please replace with "the scaffolding on which the cast was mounted".
+* "The scaffolding on which was the cast mounted". Please replace with "the scaffolding on which the cast was mounted".
 
 ## Page 87
 
-* "the photograph of the double-_Diplodocus_ mount for figure 10": please remove the hyphen for consistency with other mentions of the double _Diplodocus_.
+* "The photograph of the double-_Diplodocus_ mount for figure 10": please remove the hyphen for consistency with other mentions of the double _Diplodocus_.
 * "Janson Huntzinger": should be "Jason".
 
 ## Page 89
 
-* Gilmore 1936: italicize _Apatosaurus_.
-* Holland 1915: italicize _Apatosaurus_.
+* Gilmore (1936): italicize _Apatosaurus_.
+* Holland (1915): italicize _Apatosaurus_.
 
 ## Page 90
 
-* Norell et al. 1991: italicize _Barosaurus_.
+* Dingus (1996): the capital letters have been lost from "Great Fossils" in the title of this book.
+* Norell et al. (1991): italicize _Barosaurus_.
 
 ## Page 91
 
-* Taylor et al. in preparation b: italicize _Barosaurus lentus_.
+* Taylor and others (in preparation b): italicize _Barosaurus lentus_.
 
 ## General
 
