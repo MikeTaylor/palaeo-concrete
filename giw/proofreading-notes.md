@@ -9,7 +9,7 @@
 
 ## Page 65
 
-* Title: set "Diplodocus" in italics.
+* Title: set "Diplodocus" in italics. XXX currently in non-bold italics: should it be bold italics?
 * Title: remove "Northeastern Utah", since we now have the second clause.
 * Title: "Cultural", not "Cutltural".
 * In summary, the title should read read: "The Concrete _Diplodocus_ of Vernal—A Cultural Icon of Utah", as on the cover.
@@ -21,7 +21,7 @@
 
 ## Page 66
 
-* Running header (here and on _all_ subsequent pages): "Cultural", not "Cutltural".
+* Running header (here and on _all_ subsequent pages): "Cultural", not "Cutltural". XXX Now fixed, but "Diplodocus" is not highlighted in typography. Should it be bold italic, as in the cover caption?
 * "In this paper, we will briefly summarize the history of the original Carnegie _Diplodocus_, discuss how the concrete cast came to be, and consider its legacy." For some reason this is set in a different font from the rest of the paper.
 * Figure 1: this image is incorrect. We should be using the one at https://raw.githubusercontent.com/MikeTaylor/palaeo-concrete/master/figures/Figure-1-mounted-Diplodocus-in-2019--IMG_5787.JPG and it should be the full width of the page.
 * "As related by Taylor and others (in preparation)". This needs to specify "in preparation, a", since there is also a separate "in preparation, b".
@@ -71,20 +71,20 @@
 ## Page 73
 
 * Caption to Figure 7: please reinstate italics for _Diplodocus_.
-* "This optimism was to prove misplaced, however, nearly two years later". Please change the second comma back to a colon. The sentence as modified makes no sense.
+* "This optimism was to prove misplaced, however, nearly two years later". Please change the second comma back to a colon. The sentence as modified makes no sense. XXX This now reads "This optimism was to prove misplaced; however, nearly two years later", which is even worse.
 * "The last mention of the project in the Telegram": please reinstate the italics for _Telegram_.
 
 ## Page 74
 
 * "the eventual outcome, if any, of the Diplodocus project". Once more, please reinstate italics for _Diplodocus_.
 * "Already two inquiries have come to the Children’s Museum asking ‘Who has them next?.’” Rea (2001, p. 210)" That mess of punctuation in the middle -- question-mark period single-quote double-quote -- surely can't be right, even using the American system. I suggest question-mark single-quote period double-quote: "Already two inquiries have come to the Children’s Museum asking ‘Who has them next?’.” Rea (2001, p. 210)". Failing that, we could just delete the period.
-* "Wann Langston [written communication, 1989; see acknowledgments for affiliation]": Langston's 1990 affiliation is not included in the acknowledgements, and doesn't really seem relevant as the personal communication in question was not to us.
+* "Wann Langston [written communication, 1989; see acknowledgments for affiliation]": Langston's 1990 affiliation is not included in the acknowledgements, and doesn't really seem relevant as the personal communication in question was not to us. XXX Langston was probably not unaffiliated, as presently stated: we simply don't know, or care about, his affiliation. (Also, unaffiliated is misspelled "unafilliated".)
 
 ## Page 75
 
 * "Yet another account of the molds is described by David S Berman". Reinstate the period after David's middle initial.
 * "Relating a written communication from John S. McIntosh": my apologies, this was a verbal communication, not written.
-* "John S. McIntosh (see acknowledgments for affiliation)". McIntosh's historical affiliation is not included in the acknowledgements, and doesn't really seem relevant as the personal communication in question was not to us.
+* "John S. McIntosh (see acknowledgments for affiliation)". McIntosh's historical affiliation is not included in the acknowledgements, and doesn't really seem relevant as the personal communication in question was not to us. XXX This now says "... a verbal communication from John S. McIntosh (unaffiliated)". McIntosh was probably not unaffiliated, as presently stated: we simply don't know, or care about, his affiliation.
 
 ## Page 76
 
@@ -107,7 +107,7 @@
 
 ## Page 82
 
-* "But when the cast was returned to them some time before the end of June 1991, this was not a simple matter to re-mount it outside the museum, as the scaffolding on which was the cast mounted had been cut in order to take it down." The text as submitted had an error (a missing "it") but something strange has happened here, perhaps in an attempt to fix that error. I suggest the following: "... it was not a simple matter to re-mount it outside the museum, as the scaffolding on which it was mounted had been cut in order to take it down."
+* "But when the cast was returned to them some time before the end of June 1991, this was not a simple matter to re-mount it outside the museum, as the scaffolding on which was the cast mounted had been cut in order to take it down." The text as submitted had an error (a missing "it") but something strange has happened here, perhaps in an attempt to fix that error. I suggest the following: "... it was not a simple matter to re-mount it outside the museum, as the scaffolding on which it was mounted had been cut in order to take it down." XXX This still says "the scaffolding on which was the cast mounted". Please replace with "the scaffolding on which the cast was mounted".
 
 ## Page 83
 
@@ -122,11 +122,11 @@
 
 * Caption to Figure 13: "stored in in the basement storage area". Please delete the spare "in"!
 * Caption to Figure 13: append "Photograph by Jason Huntzinger (Utah State University)".
-* "the double Diplodocus mount at MOSI.": please remove the hyphen for consistency with other mentions of the double _Diplodocus_.
+* "the double Diplodocus mount at MOSI.": please remove the hyphen for consistency with other mentions of the double _Diplodocus_. XXX not yet done.
 
 ## Page 86
 
-* Acknowledgements: after "the photograph of the double-Diplodocus mount for figure 10.", add "Jason Huntzinger (Utah State University) supplied the photograph of the concrete elements in collections for figure 13." 
+* Acknowledgements: after "the photograph of the double-Diplodocus mount for figure 10.", add "Jason Huntzinger (Utah State University) supplied the photograph of the concrete elements in collections for figure 13." XXX This presently reads "Janson".
 * "David S Berman (late of the Carnegie Museum)" is listed as allowing us to cite a written communication. However, Berman's communication, unlike all the others, was verbal.
 * Poor David has once more lost the period after his middle initial. Please give it back to him!
 
@@ -140,4 +140,15 @@
 * The two Taylor et al. in prep references do not have the links we decided to add:
   * https://github.com/MikeTaylor/palaeo-carnegie
   * https://github.com/MikeTaylor/palaeo-baromount
+XXX These are now present and print correctly, but it would be nice if they could be correct links in the PDF, too. The same applies to all other links in the bibliography.
+
+## New issues in references of proof v2
+
+* Almost all links do not work correctly in the PFF.
+* Contorno 2017: italicize _Tampa Bay Times_. Many other venues (newspapers and journals) are also not italicized.
+* Dingus 1996: italicize _Next of Kin—great fossils at the American Museum of Natural History_. Many other book titles are not italicized.
+* Gilmore 1936: italicize _Apatosaurus_.
+* Holland 1915: italicize _Apatosaurus_.
+* Norell et al. 1991: italicize _Barosaurus_.
+* Taylor et al. in preparation b: italicize _Barosaurus lentus_.
 
