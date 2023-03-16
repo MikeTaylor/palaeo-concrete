@@ -4,14 +4,14 @@ Ken Carpenter found these images at the History Center between 13 and 16 March 2
 
 pouring-concrete.png
 	Shows the pouring of the concrete into a scapulocoracoid mold to make a cast in 1957, in the old Field House building (recognised by Steve Sroka). We can't ID the two men. The one on the left could be the same man as on the left of our Figure 2, but we don't know who that is. It was among photos on a contact sheet in a ring binder marked Vernal Express. 
-Field040.jpg
-Field039.jpg
+cast-tail-laid-out.jpeg
+cast-limbs-laid-out.jpeg
 	Also from the Vernal Express.
 
-Dippy (1).jpg
-Dippy (2).jpg
-Dippy (3).jpg
-Dippy (4).jpg
-Grant Merrell.jpg
+grant-merrell-with-cast-femur.jpeg
+grant-merrell-with-room-full-of-casts-1.jpeg
+grant-merrell-with-room-full-of-casts-2.jpeg
+mounted-concrete-skeleton-from-behind-with-untermanns-repairing.jpeg
+skull-on-pile-of-cast-bones.jpeg
 	These were all taken from Life Magazine. We should see whether they were used in an article therein.
 
